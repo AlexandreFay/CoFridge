@@ -1,0 +1,27 @@
+{
+  "food": [
+    {
+      "name": "",
+      "type": "Orange",
+      "calories": 86.0,
+      "kilojoules": 362.0,
+      "lipids": 0.2,
+      "saturatedFats": 0.1,
+      "monoUnsaturatedFats": 0.1,
+      "polyUnsaturatedFats": 0.1,
+      "carbohydrates": 21.6,
+      "sugars": 17.2,
+      "proteins": 1.7,
+      "fibers": 4.4,
+      "cholesterol": 0.0,
+      "sodium": 0.0,
+      "water": 159.6
+    }
+  ],
+  "user": {
+    "id": "",
+    "name": "",
+    "email": "",
+    "password": ""
+  }
+}
