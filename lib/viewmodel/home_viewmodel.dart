@@ -6,7 +6,7 @@ class HomeViewModel {
   CoFridgeModel _model;
 
   HomeViewModel({
-    CoFridgeModel model,
+    @required final CoFridgeModel model,
   })  : assert(model != null),
         _model = model;
 

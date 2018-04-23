@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/value/color.dart';
 import 'package:mobile_app/value/dimens.dart';
-import 'package:mobile_app/value/state.dart';
 import 'package:mobile_app/view/loading_view.dart';
 
 @immutable
@@ -9,40 +9,40 @@ class SplashView extends StatelessWidget {
   final String _message;
 
   SplashView({
-    final String message,
-  }) : _message = message;
+    @required final String message,
+  })  : assert(message?.isNotEmpty),
+        _message = message;
 
   @override
   Widget build(BuildContext context) {
-    MyState.context = context;
     MyDimens.screenWidth = MediaQuery.of(context).size.width;
     MyDimens.screenHeight = MediaQuery.of(context).size.height;
+    final ThemeData themeData = Theme.of(context);
+    final TextTheme textTheme = themeData.textTheme;
     return Scaffold(
-      backgroundColor: Colors.indigoAccent,
+      backgroundColor: MyColor.primaryColor,
       body: Column(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Image.asset(
-                "assets/images/rental-ninja-logo.png",
-                height: MyDimens.screenWidth * MyDimens.sign_in_logo_ratio,
-                width: MyDimens.screenWidth * MyDimens.sign_in_logo_ratio,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Text("Rental ", style: Theme.of(context).textTheme.display1.apply(color: Colors.white)),
-                  Text("Ninja", style: Theme.of(context).textTheme.display1.apply(color: Colors.redAccent)),
-                ],
-              ),
-            ],
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Image.asset(
+            "asset/img/fridge.png",
+            height: MyDimens.screenWidth * MyDimens.logoRatio,
+            width: MyDimens.screenWidth * MyDimens.logoRatio,
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: MyDimens.dividerTop),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text("Co ", style: textTheme.display1.apply(color: Colors.white)),
+                Text("Fridge", style: textTheme.display1.apply(color: MyColor.accentColor)),
+              ],
+            ),
           ),
           LoadingView(message: _message),
         ],
-        mainAxisAlignment: MainAxisAlignment.center,
       ),
     );
   }

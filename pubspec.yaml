@@ -12,6 +12,7 @@ dependencies:
   http:
   cached_network_image:
   url_launcher:
+  flutter_webview_plugin:
   carousel:
   cupertino_icons:
   json_annotation:
@@ -22,3 +23,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+      - asset/img/fridge.png

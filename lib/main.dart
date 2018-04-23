@@ -1,16 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/app/rental_ninja_client_app.dart';
-import 'package:mobile_app/app/sign_in_app.dart';
+import 'package:mobile_app/app/cofridge_app.dart';
+import 'package:mobile_app/app/signin_app.dart';
 import 'package:mobile_app/app/splash_app.dart';
 import 'package:mobile_app/model/cofridge_model.dart';
 import 'package:mobile_app/viewmodel/home_viewmodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-/// Headers to be used in api requests.
-Map<String, String> get headers => {"Accept": "application/json", "Content-Type": "application/json"};
 
 /// Starting point of the application
 void main() async {
@@ -30,25 +28,24 @@ void main() async {
     try {
       model = CoFridgeModel.fromJson(json.decode(data));
     } catch (e) {
-      if (data != null) {
-        // Nothing, continue
-      }
+      // Nothing, continue
     }
+  }
 
-    /// If nothing is loaded... or error has been found
-    /// run the log in screen as an app.
-    if (model == null) {
-      prefs.remove('data');
-      runApp(SignInApp());
-    } else {
-      /// Finally run the application
-      run(model, isFreshInfo: false);
-    }
+  /// If nothing is loaded... or error has been found
+  /// run the log in screen as an app.
+  if (model == null) {
+    prefs.remove('data');
+    runApp(SignInApp());
+  } else {
+    /// Finally run the application
+    run(model: model);
   }
 }
 
 /// Runs the real application given a ClientBookingData model
-void run(CoFridgeModel model, {bool isFreshInfo: true}) {
-  HomeViewModel viewModel = HomeViewModel(model: model);
-  runApp(RentalNinjaClientApp(viewModel: viewModel, shouldLoadData: !isFreshInfo));
+void run({@required CoFridgeModel model}) {
+  runApp(CoFridgeApp(
+    viewModel: HomeViewModel(model: model),
+  ));
 }

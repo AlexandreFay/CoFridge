@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-var accentColor = Colors.indigoAccent;
+class MyColor {
+  static final Color primaryColor = Colors.orangeAccent;
 
-var primaryColor = Colors.indigoAccent;
+  static final Color accentColor = Colors.blueAccent;
 
-/// Theme
-ThemeData theme(BuildContext context) => ThemeData(
-      accentColor: accentColor,
-      primaryColor: primaryColor,
-      textTheme: Theme.of(context).textTheme.copyWith(
-            subhead: Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 1),
-          ),
-    );
+  /// Theme
+  static ThemeData theme(BuildContext context) => ThemeData(
+        brightness: Brightness.light,
+        accentColor: MyColor.accentColor,
+        primaryColor: MyColor.primaryColor,
+        textTheme: Theme.of(context).textTheme.copyWith(subhead: Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 1)),
+      );
+}

@@ -6,15 +6,16 @@ import 'package:mobile_app/viewmodel/signin_viewmodel.dart';
 
 class SignInApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => MyState.state = _SignInAppState();
+  State<StatefulWidget> createState() => MyState.state = SignInAppState();
 }
 
-class _SignInAppState extends State<SignInApp> {
+class SignInAppState extends State<SignInApp> {
   @override
   Widget build(BuildContext context) => MaterialApp(
-      title: "Rental Ninja Client",
-      theme: theme(context),
-      home: SignInView(
-        viewModel: SignInViewModel(),
-      ));
+        title: "CoFridge",
+        theme: MyColor.theme(context),
+        home: SignInView(
+          viewModel: SignInViewModel(),
+        ),
+      );
 }

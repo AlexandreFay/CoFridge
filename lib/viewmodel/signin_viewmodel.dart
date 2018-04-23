@@ -1,15 +1,10 @@
-import 'dart:async';
-import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:mobile_app/app/signup_app.dart';
 
-import 'package:barcode_scan/barcode_scan.dart';
-import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
-import 'package:mobile_app/main.dart';
-import 'package:mobile_app/value/state.dart';
-import 'package:mobile_app/value/string.dart';
-import 'package:mobile_app/view/signin_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
-
+@immutable
 class SignInViewModel {
+  void handleOnNav(BuildContext context) {
+    runApp(SignUpApp());
+  }
 }

@@ -7,12 +7,12 @@ class LoadingView extends StatelessWidget {
   final String _message;
 
   LoadingView({
-    String message,
-  }) : _message = message;
+    @required final String message,
+  })  : assert(message?.isNotEmpty),
+        _message = message;
 
   @override
   Widget build(BuildContext context) {
-    MyState.context = context;
     return Center(
       child: Padding(
         padding: EdgeInsets.all(30.00),

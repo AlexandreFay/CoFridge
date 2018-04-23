@@ -5,14 +5,14 @@ import 'package:mobile_app/view/splash_view.dart';
 
 class SplashApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => MyState.state = _SplashAppState();
+  State<StatefulWidget> createState() => MyState.state = SplashAppState();
 }
 
-class _SplashAppState extends State<SplashApp> {
+class SplashAppState extends State<SplashApp> {
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: "Rental Ninja Client",
-        theme: theme(context),
-        home: SplashView(),
+        title: "CoFridge",
+        theme: MyColor.theme(context),
+        home: SplashView(message: " "),
       );
 }

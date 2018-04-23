@@ -1,22 +1,27 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/value/state.dart';
+import 'package:mobile_app/view/article_view.dart';
+import 'package:mobile_app/view/fridge_view.dart';
 import 'package:mobile_app/view/navigation_icon_view.dart';
-import 'package:mobile_app/view/payment_view.dart';
-import 'package:mobile_app/view/rental_view.dart';
-import 'package:mobile_app/view/settings_view.dart';
+import 'package:mobile_app/view/recipe_view.dart';
+import 'package:mobile_app/view/scan_view.dart';
+import 'package:mobile_app/view/setting_view.dart';
+import 'package:mobile_app/viewmodel/article_viewmodel.dart';
+import 'package:mobile_app/viewmodel/fridge_viewmodel.dart';
 import 'package:mobile_app/viewmodel/home_viewmodel.dart';
-import 'package:mobile_app/viewmodel/payment_viewmodel.dart';
-import 'package:mobile_app/viewmodel/rental_viewmodel.dart';
-import 'package:mobile_app/viewmodel/settings_viewmodel.dart';
+import 'package:mobile_app/viewmodel/recipe_viewmodel.dart';
+import 'package:mobile_app/viewmodel/scan_viewmodel.dart';
+import 'package:mobile_app/viewmodel/setting_viewmodel.dart';
 
 @immutable
 class HomeView extends StatefulWidget {
   final HomeViewModel _viewModel;
 
   HomeView({
-    @required HomeViewModel viewModel,
-  })  : _viewModel = viewModel;
+    @required final HomeViewModel viewModel,
+  })  : assert(viewModel != null),
+        _viewModel = viewModel;
 
   @override
   State<StatefulWidget> createState() => MyState.state = HomeViewState();
@@ -31,35 +36,41 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
     _views.addAll(
       <NavigationIconView>[
-        RentalView(
-          viewModel: RentalViewModel(),
-          icon: Icon(Icons.home),
-          title: "Home",
-          color: Colors.black,
+        ArticleView(
+          viewModel: ArticleViewModel(),
+          icon: Icon(Icons.new_releases),
+          title: "Article",
           vsync: this,
         ),
-        PaymentView(
-          viewModel: PaymentViewModel(),
-          icon: Icon(Icons.payment),
-          title: "Payment",
-          color: Colors.white,
+        FridgeView(
+          viewModel: FridgeViewModel(),
+          icon: Icon(Icons.list),
+          title: "Fridge",
           vsync: this,
         ),
-        SettingsView(
-          viewModel: SettingsViewModel(),
+        RecipeView(
+          viewModel: RecipeViewModel(),
+          icon: Icon(Icons.book),
+          title: "Recipe",
+          vsync: this,
+        ),
+        ScanView(
+          viewModel: ScanViewModel(),
+          icon: Icon(Icons.settings_overscan),
+          title: "Scan",
+          vsync: this,
+        ),
+        SettingView(
+          viewModel: SettingViewModel(),
           icon: Icon(Icons.settings),
-          title: "Settings",
-          color: Colors.white,
+          title: "Setting",
           vsync: this,
         ),
       ],
     );
-
     for (NavigationIconView view in _views) view.controller.addListener(_rebuild);
-
     _views[_currentIndex].controller.value = 1.0;
   }
 
@@ -94,7 +105,6 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    MyState.context = context;
     final BottomNavigationBar botNavBar = BottomNavigationBar(
       items: _views.map((NavigationIconView navigationView) => navigationView.item).toList(),
       currentIndex: _currentIndex,

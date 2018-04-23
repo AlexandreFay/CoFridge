@@ -1,28 +1,23 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+@immutable
 abstract class NavigationIconView {
-  final Widget _icon;
-  final Color _color;
-  final String _title;
   final BottomNavigationBarItem _item;
   final AnimationController _controller;
 
   NavigationIconView({
-    Widget icon,
-    String title,
-    Color color,
-    TickerProvider vsync,
-  })  : _icon = icon,
-        _color = color,
-        _title = title,
-        _item = BottomNavigationBarItem(icon: icon, title: Text(title), backgroundColor: color),
+    @required final Widget icon,
+    @required final String title,
+    @required final TickerProvider vsync,
+  })  : _item = BottomNavigationBarItem(icon: icon, title: Text(title)),
         _controller = AnimationController(duration: kThemeAnimationDuration, vsync: vsync);
 
   AnimationController get controller => _controller;
 
   BottomNavigationBarItem get item => _item;
 
-  Widget build();
+  Widget build(BuildContext context);
 
   CurvedAnimation get _animation => CurvedAnimation(
       parent: _controller,
@@ -37,7 +32,7 @@ abstract class NavigationIconView {
       opacity: _animation,
       child: SlideTransition(
         position: Tween<Offset>(begin: Offset(0.0, 0.02), end: Offset.zero).animate(_animation),
-        child: build(),
+        child: build(context),
       ),
     );
   }
