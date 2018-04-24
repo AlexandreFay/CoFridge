@@ -30,9 +30,7 @@ class SignUpView extends StatelessWidget {
           bottom: MyDimens.dividerBottom,
           left: MyDimens.dividerLeft,
         ),
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: new ListView(
           children: <Widget>[
             new Image.asset(
               "asset/img/fridge.png",
@@ -45,8 +43,8 @@ class SignUpView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  new Text("Co ", style: textTheme.display1),
-                  new Text("Fridge", style: textTheme.display1.apply(color: MyColor.accentColor)),
+                  new Text("Co ", style: textTheme.display1.copyWith(color: MyColor.primaryColor)),
+                  new Text("Fridge", style: textTheme.display1.apply(color: MyColor.primaryColor)),
                 ],
               ),
             ),
@@ -81,7 +79,11 @@ class SignUpView extends StatelessWidget {
               padding: new EdgeInsets.only(top: MyDimens.dividerTop),
               child: new RaisedButton(
                 onPressed: () => _viewModel.handleOnNav(context),
-                child: new Text("Confirm"),
+                color: MyColor.primaryColor,
+                child: new Text(
+                  "Confirm",
+                  style: textTheme.button.copyWith(color: Colors.white),
+                ),
               ),
             )
           ],

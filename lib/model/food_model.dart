@@ -5,6 +5,7 @@ part 'food_model.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class FoodModel extends Object with _$FoodModelSerializerMixin {
+  int quantity;
   String code;
   String product_name_en;
   String image_url;

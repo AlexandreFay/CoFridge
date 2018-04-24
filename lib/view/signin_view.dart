@@ -25,9 +25,7 @@ class SignInView extends StatelessWidget {
           bottom: MyDimens.dividerBottom,
           left: MyDimens.dividerLeft,
         ),
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: new ListView(
           children: <Widget>[
             new Image.asset(
               "asset/img/fridge.png",
@@ -40,8 +38,8 @@ class SignInView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  new Text("Co ", style: textTheme.display1),
-                  new Text("Fridge", style: textTheme.display1.apply(color: MyColor.accentColor)),
+                  new Text("Co ", style: textTheme.display1.copyWith(color: MyColor.primaryColor)),
+                  new Text("Fridge", style: textTheme.display1.apply(color: MyColor.primaryColor)),
                 ],
               ),
             ),
@@ -67,13 +65,20 @@ class SignInView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   new RaisedButton(
-                    onPressed: null,
+                    onPressed: () => _viewModel.handleOnNav(context),
                     color: MyColor.primaryColor,
-                    child: Text("Sign Up"),
+                    child: Text(
+                      "Sign Up",
+                      style: textTheme.button.copyWith(color: Colors.white),
+                    ),
                   ),
                   new RaisedButton(
-                    onPressed: () => _viewModel.handleOnNav(context),
-                    child: new Text("Sign In"),
+                    onPressed: null,
+                    color: MyColor.primaryColor,
+                    child: new Text(
+                      "Sign In",
+                      style: textTheme.button.copyWith(color: Colors.white),
+                    ),
                   ),
                 ],
               ),
