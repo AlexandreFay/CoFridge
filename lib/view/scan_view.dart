@@ -20,7 +20,11 @@ class ScanView extends NavigationIconView {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Container();
+    return Center(
+      child: RaisedButton(
+        onPressed: _viewModel.scan,
+        child: Text("Scan"),
+      ),
+    );
   }
 }

@@ -24,7 +24,7 @@ class HomeView extends StatefulWidget {
         _viewModel = viewModel;
 
   @override
-  State<StatefulWidget> createState() => MyState.state = HomeViewState();
+  State<StatefulWidget> createState() => MyApp.state = HomeViewState();
 }
 
 @immutable

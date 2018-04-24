@@ -21,7 +21,7 @@ class CoFridgeApp extends StatefulWidget {
         _shouldSaveData = shouldSaveData;
 
   @override
-  State<StatefulWidget> createState() => MyState.state = CoFridgeAppState();
+  State<StatefulWidget> createState() => MyApp.state = CoFridgeAppState();
 }
 
 class CoFridgeAppState extends State<CoFridgeApp> {

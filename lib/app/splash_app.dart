@@ -5,7 +5,7 @@ import 'package:mobile_app/view/splash_view.dart';
 
 class SplashApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => MyState.state = SplashAppState();
+  State<StatefulWidget> createState() => MyApp.state = SplashAppState();
 }
 
 class SplashAppState extends State<SplashApp> {

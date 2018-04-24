@@ -6,7 +6,7 @@ import 'package:mobile_app/viewmodel/signin_viewmodel.dart';
 
 class SignInApp extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => MyState.state = SignInAppState();
+  State<StatefulWidget> createState() => MyApp.state = SignInAppState();
 }
 
 class SignInAppState extends State<SignInApp> {

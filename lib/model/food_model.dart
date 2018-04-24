@@ -1,24 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:mobile_app/model/nutriment_model.dart';
 
 part 'food_model.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class FoodModel extends Object with _$FoodModelSerializerMixin {
-  String name;
-  String type;
-  double calories;
-  double kilojoules;
-  double lipids;
-  double saturatedFats;
-  double monoUnsaturatedFats;
-  double polyUnsaturatedFats;
-  double carbohydrates;
-  double sugars;
-  double proteins;
-  double fibers;
-  double cholesterol;
-  double sodium;
-  double water;
+  String code;
+  String product_name_en;
+  String image_url;
+  NutrimentModel nutriments;
 
   FoodModel();
 

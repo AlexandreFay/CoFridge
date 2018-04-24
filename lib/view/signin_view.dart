@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/value/dimens.dart';
 import 'package:mobile_app/viewmodel/signin_viewmodel.dart';
 
 @immutable
@@ -14,10 +15,47 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: RaisedButton(
-          onPressed: () => _viewModel.handleOnNav(context),
-          child: Text("Sign Up"),
+      body: Padding(
+        padding: EdgeInsets.only(
+          top: MyDimens.dividerTop,
+          right: MyDimens.dividerRight,
+          bottom: MyDimens.dividerBottom,
+          left: MyDimens.dividerLeft,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Email",
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: MyDimens.dividerTop),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Password",
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: MyDimens.dividerTop),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: null,
+                    child: Text("Sign Up"),
+                  ),
+                  RaisedButton(
+                    onPressed: () => _viewModel.handleOnNav(context),
+                    child: Text("Sign In"),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );
