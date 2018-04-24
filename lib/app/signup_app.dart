@@ -1,3 +1,4 @@
+import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/value/color.dart';
 import 'package:cofridge/value/state.dart';
 import 'package:cofridge/view/signup_view.dart';
@@ -11,11 +12,15 @@ class SignUpApp extends StatefulWidget {
 
 class SignUpAppState extends State<SignUpApp> {
   @override
-  Widget build(BuildContext context) => MaterialApp(
-        title: "CoFridge",
-        theme: MyColor.theme(context),
-        home: new SignUpView(
-          viewModel: new SignUpViewModel(),
-        ),
-      );
+  Widget build(BuildContext context) {
+    final CoFridgeModel model = new CoFridgeModel();
+    return MaterialApp(
+      title: "CoFridge",
+      theme: MyColor.theme(context),
+      home: new SignUpView(
+        viewModel: new SignUpViewModel(model: model),
+        model: model,
+      ),
+    );
+  }
 }

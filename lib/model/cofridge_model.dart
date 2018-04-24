@@ -9,7 +9,14 @@ class CoFridgeModel extends Object with _$CoFridgeModelSerializerMixin {
   List<FoodModel> food;
   UserModel user;
 
-  CoFridgeModel();
+  CoFridgeModel() {
+    if (food == null) {
+      food = new List<FoodModel>();
+    }
+    if (user == null) {
+      user = new UserModel();
+    }
+  }
 
   factory CoFridgeModel.fromJson(Map<String, dynamic> json) => _$CoFridgeModelFromJson(json);
 }

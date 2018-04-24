@@ -44,7 +44,7 @@ void main() async {
 }
 
 /// Runs the real application given a ClientBookingData model
-void run({@required CoFridgeModel model}) {
+void run({@required final CoFridgeModel model}) {
   runApp(new CoFridgeApp(
     viewModel: new HomeViewModel(model: model),
   ));

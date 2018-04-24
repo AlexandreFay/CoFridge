@@ -34,7 +34,7 @@ class CoFridgeAppState extends State<CoFridgeApp> {
     if (widget._shouldSaveData == true) _saveData();
 
     // Fetch the data from the server every 5 minutes looking for changes.
-    new Timer.periodic(Duration(minutes: 5), (_) => _saveData());
+    new Timer.periodic(Duration(minutes: 1), (_) => _saveData());
   }
 
   @override

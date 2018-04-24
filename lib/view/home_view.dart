@@ -39,31 +39,36 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
     _views.addAll(
       <NavigationIconView>[
         new ArticleView(
-          viewModel: new ArticleViewModel(),
+          viewModel: new ArticleViewModel(model: widget._viewModel.model),
+          model: widget._viewModel.model,
           icon: new Icon(Icons.new_releases),
           title: "Article",
           vsync: this,
         ),
         new FridgeView(
-          viewModel: new FridgeViewModel(),
+          viewModel: new FridgeViewModel(model: widget._viewModel.model),
+          model: widget._viewModel.model,
           icon: Icon(Icons.list),
           title: "Fridge",
           vsync: this,
         ),
         new RecipeView(
-          viewModel: new RecipeViewModel(),
+          viewModel: new RecipeViewModel(model: widget._viewModel.model),
+          model: widget._viewModel.model,
           icon: Icon(Icons.book),
           title: "Recipe",
           vsync: this,
         ),
         new ScanView(
-          viewModel: new ScanViewModel(),
+          viewModel: new ScanViewModel(model: widget._viewModel.model),
+          model: widget._viewModel.model,
           icon: new Icon(Icons.settings_overscan),
           title: "Scan",
           vsync: this,
         ),
         new SettingView(
-          viewModel: new SettingViewModel(),
+          viewModel: new SettingViewModel(model: widget._viewModel.model),
+          model: widget._viewModel.model,
           icon: Icon(Icons.settings),
           title: "Setting",
           vsync: this,

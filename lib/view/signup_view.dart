@@ -1,3 +1,4 @@
+import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/value/color.dart';
 import 'package:cofridge/value/dimens.dart';
 import 'package:cofridge/viewmodel/signup_viewmodel.dart';
@@ -7,11 +8,15 @@ import 'package:flutter/material.dart';
 @immutable
 class SignUpView extends StatelessWidget {
   final SignUpViewModel _viewModel;
+  final CoFridgeModel _model;
 
   SignUpView({
     @required final SignUpViewModel viewModel,
+    @required final CoFridgeModel model,
   })  : assert(viewModel != null),
-        _viewModel = viewModel;
+        assert(model != null),
+        _viewModel = viewModel,
+        _model = model;
 
   @override
   Widget build(BuildContext context) {
@@ -51,6 +56,7 @@ class SignUpView extends StatelessWidget {
                 decoration: new InputDecoration(
                   hintText: "Name",
                 ),
+                onChanged: (String name) => _model.user.name = name,
               ),
             ),
             new Padding(
@@ -59,6 +65,7 @@ class SignUpView extends StatelessWidget {
                 decoration: new InputDecoration(
                   hintText: "Email",
                 ),
+                onChanged: (String email) => _model.user.email = email,
               ),
             ),
             new Padding(
@@ -67,6 +74,7 @@ class SignUpView extends StatelessWidget {
                 decoration: new InputDecoration(
                   hintText: "Password",
                 ),
+                onChanged: (String password) => _model.user.password = password,
               ),
             ),
             new Padding(

@@ -5,7 +5,14 @@ import 'package:flutter/material.dart';
 
 @immutable
 class SignUpViewModel {
+  final CoFridgeModel _model;
+
+  SignUpViewModel({
+    @required final CoFridgeModel model,
+  })  : assert(model != null),
+        _model = model;
+
   void handleOnNav(BuildContext context) {
-    run(model: new CoFridgeModel());
+    run(model: _model);
   }
 }
