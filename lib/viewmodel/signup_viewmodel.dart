@@ -1,11 +1,11 @@
+import 'package:cofridge/main.dart';
+import 'package:cofridge/model/cofridge_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/main.dart';
-import 'package:mobile_app/model/cofridge_model.dart';
 
 @immutable
 class SignUpViewModel {
   void handleOnNav(BuildContext context) {
-    run(model: CoFridgeModel());
+    run(model: new CoFridgeModel());
   }
 }

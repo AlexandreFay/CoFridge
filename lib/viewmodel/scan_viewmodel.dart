@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:barcode_scan/barcode_scan.dart';
+import 'package:cofridge/model/food_model.dart';
+import 'package:cofridge/value/string.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:mobile_app/model/food_model.dart';
-import 'package:mobile_app/value/string.dart';
 
 @immutable
 class ScanViewModel {
@@ -16,7 +16,7 @@ class ScanViewModel {
 //      print("===> $barcode <===");
       final String cocaColaBarcode = "5449000000996";
       final http.Response response = await http.get("${MyString.foodUrl}$cocaColaBarcode.json");
-      final FoodModel foodModel = FoodModel.fromJson(json.decode(response.body)['product']);
+      final FoodModel foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
       print(foodModel.product_name_en);
     }
 

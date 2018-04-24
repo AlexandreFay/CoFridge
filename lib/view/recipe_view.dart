@@ -1,7 +1,7 @@
+import 'package:cofridge/view/navigation_icon_view.dart';
+import 'package:cofridge/viewmodel/recipe_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/view/navigation_icon_view.dart';
-import 'package:mobile_app/viewmodel/recipe_viewmodel.dart';
 
 @immutable
 class RecipeView extends NavigationIconView {
@@ -21,6 +21,6 @@ class RecipeView extends NavigationIconView {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container();
+    return new Container();
   }
 }

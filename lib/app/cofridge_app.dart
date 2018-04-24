@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:cofridge/value/color.dart';
+import 'package:cofridge/value/state.dart';
+import 'package:cofridge/view/home_view.dart';
+import 'package:cofridge/viewmodel/home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:mobile_app/value/color.dart';
-import 'package:mobile_app/value/state.dart';
-import 'package:mobile_app/view/home_view.dart';
-import 'package:mobile_app/viewmodel/home_viewmodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 @immutable
@@ -17,7 +17,8 @@ class CoFridgeApp extends StatefulWidget {
   CoFridgeApp({
     @required final HomeViewModel viewModel,
     final bool shouldSaveData: true,
-  })  : _viewModel = viewModel,
+  })  : assert(viewModel != null),
+        _viewModel = viewModel,
         _shouldSaveData = shouldSaveData;
 
   @override
@@ -41,7 +42,7 @@ class CoFridgeAppState extends State<CoFridgeApp> {
     return MaterialApp(
       title: "CoFridge",
       theme: MyColor.theme(context),
-      home: HomeView(
+      home: new HomeView(
         viewModel: widget._viewModel,
       ),
     );

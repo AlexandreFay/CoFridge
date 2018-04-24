@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:cofridge/app/cofridge_app.dart';
+import 'package:cofridge/app/signin_app.dart';
+import 'package:cofridge/app/splash_app.dart';
+import 'package:cofridge/model/cofridge_model.dart';
+import 'package:cofridge/viewmodel/home_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/app/cofridge_app.dart';
-import 'package:mobile_app/app/signin_app.dart';
-import 'package:mobile_app/app/splash_app.dart';
-import 'package:mobile_app/model/cofridge_model.dart';
-import 'package:mobile_app/viewmodel/home_viewmodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Starting point of the application
@@ -26,7 +26,7 @@ void main() async {
 
   if (data != null) {
     try {
-      model = CoFridgeModel.fromJson(json.decode(data));
+      model = new CoFridgeModel.fromJson(json.decode(data));
     } catch (e) {
       // Nothing, continue
     }
@@ -36,7 +36,7 @@ void main() async {
   /// run the log in screen as an app.
   if (model == null) {
     prefs.remove('data');
-    runApp(SignInApp());
+    runApp(new SignInApp());
   } else {
     /// Finally run the application
     run(model: model);
@@ -45,7 +45,7 @@ void main() async {
 
 /// Runs the real application given a ClientBookingData model
 void run({@required CoFridgeModel model}) {
-  runApp(CoFridgeApp(
-    viewModel: HomeViewModel(model: model),
+  runApp(new CoFridgeApp(
+    viewModel: new HomeViewModel(model: model),
   ));
 }

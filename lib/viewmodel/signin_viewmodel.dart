@@ -1,6 +1,6 @@
+import 'package:cofridge/app/signup_app.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/app/signup_app.dart';
 
 @immutable
 class SignInViewModel {

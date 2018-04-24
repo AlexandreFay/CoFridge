@@ -1,5 +1,5 @@
+import 'package:cofridge/model/cofridge_model.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/model/cofridge_model.dart';
 
 class MyApp {
   static State state;

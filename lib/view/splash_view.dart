@@ -1,8 +1,8 @@
+import 'package:cofridge/value/color.dart';
+import 'package:cofridge/value/dimens.dart';
+import 'package:cofridge/view/loading_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/value/color.dart';
-import 'package:mobile_app/value/dimens.dart';
-import 'package:mobile_app/view/loading_view.dart';
 
 @immutable
 class SplashView extends StatelessWidget {
@@ -19,29 +19,29 @@ class SplashView extends StatelessWidget {
     MyDimens.screenHeight = MediaQuery.of(context).size.height;
     final ThemeData themeData = Theme.of(context);
     final TextTheme textTheme = themeData.textTheme;
-    return Scaffold(
+    return new Scaffold(
       backgroundColor: MyColor.primaryColor,
-      body: Column(
+      body: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
+          new Image.asset(
             "asset/img/fridge.png",
             height: MyDimens.screenWidth * MyDimens.logoRatio,
             width: MyDimens.screenWidth * MyDimens.logoRatio,
           ),
-          Padding(
-            padding: EdgeInsets.only(top: MyDimens.dividerTop),
-            child: Row(
+          new Padding(
+            padding: new EdgeInsets.only(top: MyDimens.dividerTop),
+            child: new Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text("Co ", style: textTheme.display1.apply(color: Colors.white)),
-                Text("Fridge", style: textTheme.display1.apply(color: MyColor.accentColor)),
+                new Text("Co ", style: textTheme.display1.apply(color: Colors.white)),
+                new Text("Fridge", style: textTheme.display1.apply(color: MyColor.accentColor)),
               ],
             ),
           ),
-          LoadingView(message: _message),
+          new LoadingView(message: _message),
         ],
       ),
     );

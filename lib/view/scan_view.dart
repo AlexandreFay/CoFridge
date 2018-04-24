@@ -1,7 +1,7 @@
+import 'package:cofridge/view/navigation_icon_view.dart';
+import 'package:cofridge/viewmodel/scan_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/view/navigation_icon_view.dart';
-import 'package:mobile_app/viewmodel/scan_viewmodel.dart';
 
 @immutable
 class ScanView extends NavigationIconView {
@@ -20,10 +20,10 @@ class ScanView extends NavigationIconView {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: RaisedButton(
+    return new Center(
+      child: new RaisedButton(
         onPressed: _viewModel.scan,
-        child: Text("Scan"),
+        child: new Text("Scan"),
       ),
     );
   }

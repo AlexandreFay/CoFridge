@@ -1,18 +1,18 @@
+import 'package:cofridge/value/state.dart';
+import 'package:cofridge/view/article_view.dart';
+import 'package:cofridge/view/fridge_view.dart';
+import 'package:cofridge/view/navigation_icon_view.dart';
+import 'package:cofridge/view/recipe_view.dart';
+import 'package:cofridge/view/scan_view.dart';
+import 'package:cofridge/view/setting_view.dart';
+import 'package:cofridge/viewmodel/article_viewmodel.dart';
+import 'package:cofridge/viewmodel/fridge_viewmodel.dart';
+import 'package:cofridge/viewmodel/home_viewmodel.dart';
+import 'package:cofridge/viewmodel/recipe_viewmodel.dart';
+import 'package:cofridge/viewmodel/scan_viewmodel.dart';
+import 'package:cofridge/viewmodel/setting_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/value/state.dart';
-import 'package:mobile_app/view/article_view.dart';
-import 'package:mobile_app/view/fridge_view.dart';
-import 'package:mobile_app/view/navigation_icon_view.dart';
-import 'package:mobile_app/view/recipe_view.dart';
-import 'package:mobile_app/view/scan_view.dart';
-import 'package:mobile_app/view/setting_view.dart';
-import 'package:mobile_app/viewmodel/article_viewmodel.dart';
-import 'package:mobile_app/viewmodel/fridge_viewmodel.dart';
-import 'package:mobile_app/viewmodel/home_viewmodel.dart';
-import 'package:mobile_app/viewmodel/recipe_viewmodel.dart';
-import 'package:mobile_app/viewmodel/scan_viewmodel.dart';
-import 'package:mobile_app/viewmodel/setting_viewmodel.dart';
 
 @immutable
 class HomeView extends StatefulWidget {
@@ -38,32 +38,32 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
     super.initState();
     _views.addAll(
       <NavigationIconView>[
-        ArticleView(
-          viewModel: ArticleViewModel(),
-          icon: Icon(Icons.new_releases),
+        new ArticleView(
+          viewModel: new ArticleViewModel(),
+          icon: new Icon(Icons.new_releases),
           title: "Article",
           vsync: this,
         ),
-        FridgeView(
-          viewModel: FridgeViewModel(),
+        new FridgeView(
+          viewModel: new FridgeViewModel(),
           icon: Icon(Icons.list),
           title: "Fridge",
           vsync: this,
         ),
-        RecipeView(
-          viewModel: RecipeViewModel(),
+        new RecipeView(
+          viewModel: new RecipeViewModel(),
           icon: Icon(Icons.book),
           title: "Recipe",
           vsync: this,
         ),
-        ScanView(
-          viewModel: ScanViewModel(),
-          icon: Icon(Icons.settings_overscan),
+        new ScanView(
+          viewModel: new ScanViewModel(),
+          icon: new Icon(Icons.settings_overscan),
           title: "Scan",
           vsync: this,
         ),
-        SettingView(
-          viewModel: SettingViewModel(),
+        new SettingView(
+          viewModel: new SettingViewModel(),
           icon: Icon(Icons.settings),
           title: "Setting",
           vsync: this,
@@ -100,12 +100,12 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       return aValue.compareTo(bValue);
     });
 
-    return Stack(children: transitions);
+    return new Stack(children: transitions);
   }
 
   @override
   Widget build(BuildContext context) {
-    final BottomNavigationBar botNavBar = BottomNavigationBar(
+    final BottomNavigationBar botNavBar = new BottomNavigationBar(
       items: _views.map((NavigationIconView navigationView) => navigationView.item).toList(),
       currentIndex: _currentIndex,
       type: _type,
@@ -118,8 +118,8 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
       },
     );
 
-    return Scaffold(
-      body: Center(child: _buildTransitionsStack()),
+    return new Scaffold(
+      body: new Center(child: _buildTransitionsStack()),
       bottomNavigationBar: botNavBar,
     );
   }

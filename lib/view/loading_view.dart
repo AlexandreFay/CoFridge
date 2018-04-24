@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/value/state.dart';
 
 @immutable
 class LoadingView extends StatelessWidget {
@@ -13,10 +12,10 @@ class LoadingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.all(30.00),
-        child: Column(
+    return new Center(
+      child: new Padding(
+        padding: new EdgeInsets.all(30.00),
+        child: new Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: _getChildren(),
@@ -30,8 +29,8 @@ class LoadingView extends StatelessWidget {
 
     if (_message != null) {
       children.add(Padding(
-        padding: EdgeInsets.only(top: 10.00, bottom: 10.00),
-        child: Text(_message, style: TextStyle(fontSize: 20.00, color: Colors.white)),
+        padding: new EdgeInsets.only(top: 10.00, bottom: 10.00),
+        child: new Text(_message, style: TextStyle(fontSize: 20.00, color: Colors.white)),
       ));
     }
     children.add(CircularProgressIndicator(

@@ -10,8 +10,8 @@ abstract class NavigationIconView {
     @required final Widget icon,
     @required final String title,
     @required final TickerProvider vsync,
-  })  : _item = BottomNavigationBarItem(icon: icon, title: Text(title)),
-        _controller = AnimationController(duration: kThemeAnimationDuration, vsync: vsync);
+  })  : _item = new BottomNavigationBarItem(icon: icon, title: Text(title)),
+        _controller = new AnimationController(duration: kThemeAnimationDuration, vsync: vsync);
 
   AnimationController get controller => _controller;
 
@@ -19,19 +19,19 @@ abstract class NavigationIconView {
 
   Widget build(BuildContext context);
 
-  CurvedAnimation get _animation => CurvedAnimation(
+  CurvedAnimation get _animation => new CurvedAnimation(
       parent: _controller,
-      curve: Interval(
+      curve: new Interval(
         0.5,
         1.0,
         curve: Curves.fastOutSlowIn,
       ));
 
   FadeTransition transition(BottomNavigationBarType type, BuildContext context) {
-    return FadeTransition(
+    return new FadeTransition(
       opacity: _animation,
-      child: SlideTransition(
-        position: Tween<Offset>(begin: Offset(0.0, 0.02), end: Offset.zero).animate(_animation),
+      child: new SlideTransition(
+        position: new Tween<Offset>(begin: Offset(0.0, 0.02), end: Offset.zero).animate(_animation),
         child: build(context),
       ),
     );

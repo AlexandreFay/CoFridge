@@ -1,6 +1,6 @@
+import 'package:cofridge/model/food_model.dart';
+import 'package:cofridge/model/user_model.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:mobile_app/model/food_model.dart';
-import 'package:mobile_app/model/user_model.dart';
 
 part 'cofridge_model.g.dart';
 

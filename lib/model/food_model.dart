@@ -1,5 +1,5 @@
+import 'package:cofridge/model/nutriment_model.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:mobile_app/model/nutriment_model.dart';
 
 part 'food_model.g.dart';
 

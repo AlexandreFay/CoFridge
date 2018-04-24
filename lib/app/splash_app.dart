@@ -1,7 +1,7 @@
+import 'package:cofridge/value/color.dart';
+import 'package:cofridge/value/state.dart';
+import 'package:cofridge/view/splash_view.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/value/color.dart';
-import 'package:mobile_app/value/state.dart';
-import 'package:mobile_app/view/splash_view.dart';
 
 class SplashApp extends StatefulWidget {
   @override
@@ -13,6 +13,6 @@ class SplashAppState extends State<SplashApp> {
   Widget build(BuildContext context) => MaterialApp(
         title: "CoFridge",
         theme: MyColor.theme(context),
-        home: SplashView(message: " "),
+        home: new SplashView(message: " "),
       );
 }

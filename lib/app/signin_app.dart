@@ -1,8 +1,8 @@
+import 'package:cofridge/value/color.dart';
+import 'package:cofridge/value/state.dart';
+import 'package:cofridge/view/signin_view.dart';
+import 'package:cofridge/viewmodel/signin_viewmodel.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/value/color.dart';
-import 'package:mobile_app/value/state.dart';
-import 'package:mobile_app/view/signin_view.dart';
-import 'package:mobile_app/viewmodel/signin_viewmodel.dart';
 
 class SignInApp extends StatefulWidget {
   @override
@@ -14,8 +14,8 @@ class SignInAppState extends State<SignInApp> {
   Widget build(BuildContext context) => MaterialApp(
         title: "CoFridge",
         theme: MyColor.theme(context),
-        home: SignInView(
-          viewModel: SignInViewModel(),
+        home: new SignInView(
+          viewModel: new SignInViewModel(),
         ),
       );
 }
