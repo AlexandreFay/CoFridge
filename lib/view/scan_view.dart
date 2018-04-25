@@ -1,6 +1,7 @@
 import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/model/food_model.dart';
 import 'package:cofridge/value/dimens.dart';
+import 'package:cofridge/value/state.dart';
 import 'package:cofridge/view/navigation_icon_view.dart';
 import 'package:cofridge/viewmodel/scan_viewmodel.dart';
 import 'package:flutter/foundation.dart';
@@ -40,16 +41,16 @@ class ScanView extends NavigationIconView {
         children: <Widget>[
           new Expanded(
             child: new RaisedButton(
-              onPressed: () => _viewModel.scan().then((FoodModel model) => _viewModel.add(model: model)),
+              onPressed: () => _viewModel.scan(EScan.ADD),
               child: Text("Add"),
             ),
           ),
           new Expanded(
             child: new RaisedButton(
-              onPressed: () => _viewModel.scan().then((FoodModel model) => _viewModel.remove(model: model)),
+              onPressed: () => _viewModel.scan(EScan.REMOVE),
               child: Text("Remove"),
-              ),
             ),
+          ),
         ],
       ),
     );

@@ -22,8 +22,8 @@ class ScanViewModel {
   bool remove({@required final FoodModel model}) {
     for (int index = 0; index != _model.food.length; index++) {
       if (model.code == _model.food[index].code) {
-        _model.food[index].quantity--;
-        if (_model.food[index].quantity == 0) {
+        _model.food[index].myQuantity--;
+        if (_model.food[index].myQuantity == 0) {
           _model.food.removeAt(index);
         }
         return SUCCESS;
@@ -35,23 +35,25 @@ class ScanViewModel {
   bool add({@required final FoodModel model}) {
     for (final FoodModel tmpFood in _model.food) {
       if (model.code == tmpFood.code) {
-        tmpFood.quantity++;
+        tmpFood.myQuantity++;
         return SUCCESS;
       }
     }
+    model.myQuantity = 1;
     _model.food.add(model);
     return SUCCESS;
   }
 
-  Future<Null> scan() async {
+  Future<Null> scan(EScan escan) async {
     try {
-//      final String barcode = await BarcodeScanner.scan();
-//      print("===> $barcode <===");
+      final String barcode = await BarcodeScanner.scan();
+      print("===> $barcode <===");
 
       /// Coca Cola
-      final String barcode = "5449000000996";
+//      final String barcode = "5449000000996";
       final http.Response response = await http.get("${MyString.foodUrl}$barcode.json");
-      return new FoodModel.fromJson(json.decode(response.body)['product']);
+      final FoodModel foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
+      (escan == EScan.ADD) ? add(model: foodModel) : remove(model: foodModel);
     }
 
     /// Check for errors

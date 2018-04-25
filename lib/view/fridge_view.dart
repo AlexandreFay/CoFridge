@@ -60,6 +60,7 @@ class FridgeView extends NavigationIconView {
           height: 24.0,
         ),
         title: new Text(foodModel.product_name_en),
+        trailing: new Text(foodModel.myQuantity.toString()),
       );
     }).toList();
   }
