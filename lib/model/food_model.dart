@@ -7,9 +7,9 @@ part 'food_model.g.dart';
 class FoodModel extends Object with _$FoodModelSerializerMixin {
   int myQuantity;
   String code;
-  String product_name_en;
+  String product_name;
   String image_url;
-  NutrimentModel nutriments;
+//  NutrimentModel nutriments;
 
   FoodModel();
 

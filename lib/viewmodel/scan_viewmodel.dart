@@ -49,9 +49,15 @@ class ScanViewModel {
       final String barcode = await BarcodeScanner.scan();
       print("===> $barcode <===");
 
+      /// Beure
+//      final String barcode = "3155250364833";
+
       /// Coca Cola
 //      final String barcode = "5449000000996";
       final http.Response response = await http.get("${MyString.foodUrl}$barcode.json");
+      if (response.statusCode != 200) {
+        return null;
+      }
       final FoodModel foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
       (escan == EScan.ADD) ? add(model: foodModel) : remove(model: foodModel);
     }
