@@ -5,14 +5,12 @@ dependencies:
   flutter:
     sdk: flutter
   barcode_scan:
-  map_view:
   shared_preferences:
   connectivity:
   share:
   http:
   cached_network_image:
   url_launcher:
-  flutter_webview_plugin:
   carousel:
   cupertino_icons:
   json_annotation:
