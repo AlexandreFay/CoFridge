@@ -3,16 +3,12 @@ class MyDimens {
   static double screenHeight;
 
   static final double paddingAll = 8.0;
+  static final double paddingVertical = 16.0;
+  static final double paddingHorizontal = 8.0;
   static final double paddingTop = 16.0;
   static final double paddingRight = 8.0;
   static final double paddingBottom = 16.0;
   static final double paddingLeft = 8.0;
-
-  static final double listTileAll = 8.0;
-  static final double listTileTop = 16.0;
-  static final double listTileRight = 8.0;
-  static final double listTileBottom = 16.0;
-  static final double listTileLeft = 8.0;
 
   static final double dividerAll = 16.0;
   static final double dividerTop = 32.0;
