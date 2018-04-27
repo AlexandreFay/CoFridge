@@ -37,10 +37,14 @@ class FridgeView extends NavigationIconView {
         bottom: MyDimens.dividerBottom,
         left: MyDimens.dividerLeft,
       ),
-      child: new Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: _getChildren(context),
+      child: new ListView(
+        children: <Widget>[
+          new Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: _getChildren(context),
+          ),
+        ],
       ),
     );
   }
