@@ -119,6 +119,9 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           _views[_currentIndex].controller.reverse();
           _currentIndex = index;
           _views[_currentIndex].controller.forward();
+          if (_views[_currentIndex] is ScanView) {
+            (_views[_currentIndex] as ScanView).viewModel.scan(EScan.ADD);
+          }
         });
       },
     );

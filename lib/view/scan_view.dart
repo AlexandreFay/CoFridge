@@ -1,5 +1,4 @@
 import 'package:cofridge/model/cofridge_model.dart';
-import 'package:cofridge/model/food_model.dart';
 import 'package:cofridge/value/dimens.dart';
 import 'package:cofridge/value/state.dart';
 import 'package:cofridge/view/navigation_icon_view.dart';
@@ -11,6 +10,8 @@ import 'package:flutter/material.dart';
 class ScanView extends NavigationIconView {
   final ScanViewModel _viewModel;
   final CoFridgeModel _model;
+
+  ScanViewModel get viewModel => _viewModel;
 
   ScanView({
     @required final ScanViewModel viewModel,
