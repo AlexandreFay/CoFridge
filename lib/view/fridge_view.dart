@@ -45,6 +45,19 @@ class FridgeView extends NavigationIconView {
     );
   }
 
+  Widget _getFloatingButton() {
+    return new Expanded(
+      child: new Container(
+        alignment: Alignment.bottomRight,
+        child: new FloatingActionButton(
+          backgroundColor: MyColor.primaryColor,
+          onPressed: () => _viewModel.scan(EScan.ADD),
+          child: new Icon(Icons.settings_overscan),
+        ),
+      ),
+    );
+  }
+
   List<Widget> _getChildren(BuildContext context) {
     if (_model.food == null || _model.food.isEmpty) {
       return <Widget>[
@@ -52,16 +65,7 @@ class FridgeView extends NavigationIconView {
           "No Food",
           textAlign: TextAlign.center,
         ),
-        new Expanded(
-          child: new Container(
-            alignment: Alignment.bottomRight,
-            child: new FloatingActionButton(
-              backgroundColor: MyColor.primaryColor,
-              onPressed: () => _viewModel.scan(EScan.ADD),
-              child: new Icon(Icons.settings_overscan),
-            ),
-          ),
-        ),
+        _getFloatingButton(),
       ];
     }
 
@@ -77,18 +81,7 @@ class FridgeView extends NavigationIconView {
         trailing: new Text(foodModel.myQuantity.toString()),
       );
     }).toList());
-    foodWidgets.add(
-      new Expanded(
-        child: new Container(
-          alignment: Alignment.bottomRight,
-          child: new FloatingActionButton(
-            backgroundColor: MyColor.primaryColor,
-            onPressed: () => _viewModel.scan(EScan.ADD),
-            child: new Icon(Icons.settings_overscan),
-          ),
-        ),
-      ),
-    );
+    foodWidgets.add(_getFloatingButton());
     return foodWidgets;
   }
 }

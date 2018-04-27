@@ -60,6 +60,7 @@ class FridgeViewModel {
       }
       final FoodModel foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
       (escan == EScan.ADD) ? add(model: foodModel) : remove(model: foodModel);
+      MyApp.state.setState(() {});
     }
 
     /// Check for errors

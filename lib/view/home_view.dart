@@ -3,7 +3,6 @@ import 'package:cofridge/view/article_view.dart';
 import 'package:cofridge/view/fridge_view.dart';
 import 'package:cofridge/view/navigation_icon_view.dart';
 import 'package:cofridge/view/recipe_view.dart';
-import 'package:cofridge/view/scan_view.dart';
 import 'package:cofridge/view/setting_view.dart';
 import 'package:cofridge/viewmodel/article_viewmodel.dart';
 import 'package:cofridge/viewmodel/fridge_viewmodel.dart';
@@ -118,9 +117,6 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           _views[_currentIndex].controller.reverse();
           _currentIndex = index;
           _views[_currentIndex].controller.forward();
-          if (_views[_currentIndex] is ScanView) {
-            (_views[_currentIndex] as ScanView).viewModel.scan(EScan.ADD);
-          }
         });
       },
     );
