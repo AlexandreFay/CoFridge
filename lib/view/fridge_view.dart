@@ -1,6 +1,8 @@
 import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/model/food_model.dart';
+import 'package:cofridge/value/color.dart';
 import 'package:cofridge/value/dimens.dart';
+import 'package:cofridge/value/state.dart';
 import 'package:cofridge/view/navigation_icon_view.dart';
 import 'package:cofridge/viewmodel/fridge_viewmodel.dart';
 import 'package:flutter/foundation.dart';
@@ -52,7 +54,9 @@ class FridgeView extends NavigationIconView {
         ),
       ];
     }
-    return _model.food.map((FoodModel foodModel) {
+
+    List<Widget> foodWidgets = new List<Widget>();
+    foodWidgets.addAll(_model.food.map((FoodModel foodModel) {
       return new ListTile(
         leading: new Image.network(
           foodModel.image_url,
@@ -62,6 +66,19 @@ class FridgeView extends NavigationIconView {
         title: new Text(foodModel.product_name),
         trailing: new Text(foodModel.myQuantity.toString()),
       );
-    }).toList();
+    }).toList());
+    foodWidgets.add(
+      new Expanded(
+        child: new Container(
+          alignment: Alignment.bottomRight,
+          child: new FloatingActionButton(
+            backgroundColor: MyColor.primaryColor,
+            onPressed: () => _viewModel.scan(EScan.ADD),
+            child: new Icon(Icons.settings_overscan),
+          ),
+        ),
+      ),
+    );
+    return foodWidgets;
   }
 }

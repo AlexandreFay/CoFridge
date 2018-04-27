@@ -9,7 +9,6 @@ import 'package:cofridge/viewmodel/article_viewmodel.dart';
 import 'package:cofridge/viewmodel/fridge_viewmodel.dart';
 import 'package:cofridge/viewmodel/home_viewmodel.dart';
 import 'package:cofridge/viewmodel/recipe_viewmodel.dart';
-import 'package:cofridge/viewmodel/scan_viewmodel.dart';
 import 'package:cofridge/viewmodel/setting_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -59,13 +58,13 @@ class HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           title: "Recipe",
           vsync: this,
         ),
-        new ScanView(
-          viewModel: new ScanViewModel(model: widget._viewModel.model),
-          model: widget._viewModel.model,
-          icon: new Icon(Icons.settings_overscan),
-          title: "Scan",
-          vsync: this,
-        ),
+//        new ScanView(
+//          viewModel: new ScanViewModel(model: widget._viewModel.model),
+//          model: widget._viewModel.model,
+//          icon: new Icon(Icons.settings_overscan),
+//          title: "Scan",
+//          vsync: this,
+//        ),
         new SettingView(
           viewModel: new SettingViewModel(model: widget._viewModel.model),
           model: widget._viewModel.model,
