@@ -52,6 +52,16 @@ class FridgeView extends NavigationIconView {
           "No Food",
           textAlign: TextAlign.center,
         ),
+        new Expanded(
+          child: new Container(
+            alignment: Alignment.bottomRight,
+            child: new FloatingActionButton(
+              backgroundColor: MyColor.primaryColor,
+              onPressed: () => _viewModel.scan(EScan.ADD),
+              child: new Icon(Icons.settings_overscan),
+            ),
+          ),
+        ),
       ];
     }
 
