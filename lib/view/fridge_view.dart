@@ -71,6 +71,9 @@ class FridgeView extends NavigationIconView {
 
     List<Widget> foodWidgets = new List<Widget>();
     foodWidgets.addAll(_model.food.map((FoodModel foodModel) {
+      if (foodModel?.product_name == null || foodModel?.product_name == "") {
+        return new Container();
+      }
       return new ListTile(
         leading: (foodModel?.image_url != null)
             ? new Image.network(
