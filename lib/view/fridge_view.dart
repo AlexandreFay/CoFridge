@@ -37,23 +37,11 @@ class FridgeView extends NavigationIconView {
         bottom: MyDimens.dividerBottom,
         left: MyDimens.dividerLeft,
       ),
-      child: new ListView(
-        children: <Widget>[
-          new Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: _getChildren(context),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _getFloatingButton() {
-    return new Expanded(
-      child: new Container(
-        alignment: Alignment.bottomRight,
-        child: new FloatingActionButton(
+      child: new Scaffold(
+        body: new ListView(
+          children: _getChildren(context),
+        ),
+        floatingActionButton: new FloatingActionButton(
           backgroundColor: MyColor.primaryColor,
           onPressed: () => _viewModel.scan(EScan.ADD),
           child: new Icon(Icons.settings_overscan),
@@ -69,7 +57,6 @@ class FridgeView extends NavigationIconView {
           "No Food",
           textAlign: TextAlign.center,
         ),
-        _getFloatingButton(),
       ];
     }
 
@@ -92,7 +79,6 @@ class FridgeView extends NavigationIconView {
             : new Container(),
       );
     }).toList());
-    foodWidgets.add(_getFloatingButton());
     return foodWidgets;
   }
 }
