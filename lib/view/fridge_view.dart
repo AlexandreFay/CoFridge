@@ -72,13 +72,17 @@ class FridgeView extends NavigationIconView {
     List<Widget> foodWidgets = new List<Widget>();
     foodWidgets.addAll(_model.food.map((FoodModel foodModel) {
       return new ListTile(
-        leading: new Image.network(
-          foodModel.image_url,
-          width: 24.0,
-          height: 24.0,
-        ),
-        title: new Text(foodModel.product_name),
-        trailing: new Text(foodModel.myQuantity.toString()),
+        leading: (foodModel?.image_url != null)
+            ? new Image.network(
+                foodModel.image_url,
+                width: 24.0,
+                height: 24.0,
+              )
+            : new Container(),
+        title: (foodModel?.product_name != null) ? new Text(foodModel.product_name) : new Container(),
+        trailing: (foodModel?.myQuantity?.toString() != null && foodModel?.myQuantity?.toString() != "")
+            ? new Text(foodModel.myQuantity.toString())
+            : new Container(),
       );
     }).toList());
     foodWidgets.add(_getFloatingButton());

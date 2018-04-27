@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33667a3a-02d6-405c-a659-725bb7990cef" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/lib/view/fridge_view.dart" afterPath="$PROJECT_DIR$/lib/view/fridge_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/view/home_view.dart" afterPath="$PROJECT_DIR$/lib/view/home_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/viewmodel/fridge_viewmodel.dart" afterPath="$PROJECT_DIR$/lib/viewmodel/fridge_viewmodel.dart" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,17 +76,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fridge_view.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fridge_view.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/view/fridge_view.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
+            <state relative-caret-position="1398">
+              <caret line="81" column="102" lean-forward="true" selection-start-line="81" selection-start-column="102" selection-end-line="81" selection-end-column="102" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fridge_viewmodel.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fridge_viewmodel.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/viewmodel/fridge_viewmodel.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="534">
@@ -219,8 +216,8 @@
         <option value="$PROJECT_DIR$/lib/viewmodel/scan_viewmodel.dart" />
         <option value="$PROJECT_DIR$/lib/view/scan_view.dart" />
         <option value="$PROJECT_DIR$/lib/view/home_view.dart" />
-        <option value="$PROJECT_DIR$/lib/view/fridge_view.dart" />
         <option value="$PROJECT_DIR$/lib/viewmodel/fridge_viewmodel.dart" />
+        <option value="$PROJECT_DIR$/lib/view/fridge_view.dart" />
       </list>
     </option>
   </component>
@@ -1649,14 +1646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/view/fridge_view.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/viewmodel/fridge_viewmodel.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -1664,6 +1653,14 @@
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/view/fridge_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1398">
+          <caret line="81" column="102" lean-forward="true" selection-start-line="81" selection-start-column="102" selection-end-line="81" selection-end-column="102" />
+          <folding />
         </state>
       </provider>
     </entry>
