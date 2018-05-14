@@ -9,7 +9,7 @@ class FoodModel extends Object with _$FoodModelSerializerMixin {
   String code;
   String product_name;
   String image_url;
-//  NutrimentModel nutriments;
+  NutrimentModel nutriments;
 
   FoodModel();
 

@@ -1,1 +1,1 @@
-# CoFridge
+**CoFridge**
