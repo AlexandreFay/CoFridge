@@ -9,6 +9,8 @@ dependencies:
   connectivity:
   share:
   http:
+  html:
+  flutter_html_view:
   cached_network_image:
   url_launcher:
   carousel:

@@ -2,7 +2,6 @@ import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/model/food_model.dart';
 import 'package:cofridge/value/color.dart';
 import 'package:cofridge/value/dimens.dart';
-import 'package:cofridge/value/state.dart';
 import 'package:cofridge/view/navigation_icon_view.dart';
 import 'package:cofridge/viewmodel/fridge_viewmodel.dart';
 import 'package:flutter/foundation.dart';
@@ -69,7 +68,7 @@ class FridgeView extends NavigationIconView {
       ),
       floatingActionButton: new FloatingActionButton(
         backgroundColor: MyColor.primaryColor,
-        onPressed: () => _viewModel.scan(EScan.ADD),
+        onPressed: () => _viewModel.scan(context: context),
         child: new Icon(
           Icons.settings_overscan,
           color: Colors.white,
@@ -100,11 +99,9 @@ class FridgeView extends NavigationIconView {
                 width: 24.0,
                 height: 24.0,
               )
-            : new Container(),
-        title: (foodModel?.product_name != null) ? new Text(foodModel.product_name) : new Container(),
-        trailing: (foodModel?.myQuantity?.toString() != null && foodModel?.myQuantity?.toString() != "")
-            ? new Text(foodModel.myQuantity.toString())
-            : new Container(),
+            : new Icon(Icons.help_outline),
+        title: new Text(foodModel.product_name),
+        trailing: new Text(foodModel.quantity.toString()),
         onTap: () => _viewModel.onTapFood(context: context, foodModel: foodModel),
       );
     }).toList());

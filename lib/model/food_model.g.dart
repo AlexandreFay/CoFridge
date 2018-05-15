@@ -7,7 +7,6 @@ part of 'food_model.dart';
 // **************************************************************************
 
 FoodModel _$FoodModelFromJson(Map<String, dynamic> json) => new FoodModel()
-  ..myQuantity = json['myQuantity'] as int
   ..code = json['code'] as String
   ..product_name = json['product_name'] as String
   ..image_url = json['image_url'] as String
@@ -16,7 +15,6 @@ FoodModel _$FoodModelFromJson(Map<String, dynamic> json) => new FoodModel()
       : new NutrimentModel.fromJson(json['nutriments'] as Map<String, dynamic>);
 
 abstract class _$FoodModelSerializerMixin {
-  int get myQuantity;
   String get code;
   String get product_name;
   String get image_url;
@@ -30,7 +28,6 @@ abstract class _$FoodModelSerializerMixin {
       }
     }
 
-    writeNotNull('myQuantity', myQuantity);
     writeNotNull('code', code);
     writeNotNull('product_name', product_name);
     writeNotNull('image_url', image_url);

@@ -6,6 +6,7 @@ import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/model/food_model.dart';
 import 'package:cofridge/value/state.dart';
 import 'package:cofridge/value/string.dart';
+import 'package:cofridge/view/dialog_view.dart';
 import 'package:cofridge/view/fridge_content_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -35,32 +36,48 @@ class FridgeViewModel {
     );
   }
 
+  Future<Null> navBack({@required final BuildContext context}) async {
+    MyApp.state.setState(() {});
+    Navigator.pop(context);
+  }
+
   Future<bool> remove({@required final FoodModel model}) async {
-    for (int index = 0; index != _model.food.length; index++) {
-      if (model.code == _model.food[index].code) {
-        _model.food[index].myQuantity--;
-        if (_model.food[index].myQuantity == 0) {
-          _model.food.removeAt(index);
-        }
-        return SUCCESS;
-      }
+    if (model == null) {
+      return false;
     }
-    return FAILURE;
+    model.quantity--;
+    if (model.quantity == 0) {
+      _model.food.remove(model);
+    }
+    return true;
   }
 
-  Future<bool> add({@required final FoodModel model}) async {
-    for (final FoodModel tmpFood in _model.food) {
-      if (model.code == tmpFood.code) {
-        tmpFood.myQuantity++;
-        return SUCCESS;
-      }
+  Future<bool> add({@required final FoodModel model, @required final bool contain}) async {
+    if (model == null || model.product_name == null || model.product_name == "") {
+      return false;
     }
-    model.myQuantity = 1;
-    _model.food.add(model);
-    return SUCCESS;
+    if (contain) {
+      model.quantity++;
+    } else {
+      model.quantity = 1;
+      _model.food.add(model);
+    }
+    return true;
   }
 
-  Future<Null> scan(EScan escan) async {
+  FoodModel contain({@required final String barcode}) {
+    if (barcode == null || barcode == "") {
+      return null;
+    }
+    for (final FoodModel tmp in _model.food) {
+      if (tmp.code == barcode) {
+        return tmp;
+      }
+    }
+    return null;
+  }
+
+  Future<Null> scan({@required final BuildContext context}) async {
     try {
 //      final String barcode = await BarcodeScanner.scan();
 //      print("===> $barcode <===");
@@ -70,12 +87,23 @@ class FridgeViewModel {
 
       /// Coca Cola
       final String barcode = "5449000000996";
+      FoodModel foodModel = contain(barcode: barcode);
+      if (foodModel != null) {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) => new DialogView(
+                viewModel: this,
+                foodModel: foodModel,
+              ),
+        );
+        return null;
+      }
       final http.Response response = await http.get("${MyString.foodUrl}$barcode.json");
       if (response.statusCode != 200) {
         return null;
       }
-      final FoodModel foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
-      (escan == EScan.ADD) ? add(model: foodModel) : remove(model: foodModel);
+      foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
+      add(model: foodModel, contain: false);
       MyApp.state.setState(() {});
     }
 
