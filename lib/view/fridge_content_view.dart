@@ -71,14 +71,6 @@ class FridgeContentView extends StatelessWidget {
           ],
         ),
       ),
-//      floatingActionButton: new FloatingActionButton(
-//        backgroundColor: MyColor.primaryColor,
-//        onPressed: () => _viewModel.scan(EScan.ADD),
-//        child: new Icon(
-//          Icons.settings_overscan,
-//          color: Colors.white,
-//        ),
-//      ),
     );
   }
 

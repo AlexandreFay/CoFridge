@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/model/food_model.dart';
-import 'package:cofridge/value/state.dart';
 import 'package:cofridge/value/string.dart';
 import 'package:cofridge/view/dialog_view.dart';
 import 'package:cofridge/view/fridge_content_view.dart';
@@ -37,7 +36,6 @@ class FridgeViewModel {
   }
 
   Future<Null> navBack({@required final BuildContext context}) async {
-    MyApp.state.setState(() {});
     Navigator.pop(context);
   }
 
@@ -45,9 +43,11 @@ class FridgeViewModel {
     if (model == null) {
       return false;
     }
-    model.quantity--;
-    if (model.quantity == 0) {
-      _model.food.remove(model);
+    model.myQuantity.add(model.myQuantity.value - 1);
+    if (model.myQuantity.value == 0) {
+      final tmp = _model.food.value;
+      tmp.remove(model);
+      _model.food.add(tmp);
     }
     return true;
   }
@@ -57,10 +57,12 @@ class FridgeViewModel {
       return false;
     }
     if (contain) {
-      model.quantity++;
+      model.myQuantity.add(model.myQuantity.value + 1);
     } else {
-      model.quantity = 1;
-      _model.food.add(model);
+      model.myQuantity.add(1);
+      final tmp = _model.food.value;
+      tmp.add(model);
+      _model.food.add(tmp);
     }
     return true;
   }
@@ -69,7 +71,7 @@ class FridgeViewModel {
     if (barcode == null || barcode == "") {
       return null;
     }
-    for (final FoodModel tmp in _model.food) {
+    for (final FoodModel tmp in _model.food.value) {
       if (tmp.code == barcode) {
         return tmp;
       }
@@ -104,7 +106,6 @@ class FridgeViewModel {
       }
       foodModel = new FoodModel.fromJson(json.decode(response.body)['product']);
       add(model: foodModel, contain: false);
-      MyApp.state.setState(() {});
     }
 
     /// Check for errors

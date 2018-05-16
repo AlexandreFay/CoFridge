@@ -10,6 +10,7 @@ dependencies:
   share:
   http:
   html:
+  rxdart:
   flutter_html_view:
   cached_network_image:
   url_launcher:

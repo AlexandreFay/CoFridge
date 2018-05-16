@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:cofridge/value/color.dart';
 import 'package:cofridge/value/state.dart';
@@ -7,7 +6,6 @@ import 'package:cofridge/view/home_view.dart';
 import 'package:cofridge/viewmodel/home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 @immutable
 class CoFridgeApp extends StatefulWidget {
@@ -50,9 +48,11 @@ class CoFridgeAppState extends State<CoFridgeApp> {
 
   /// Saves the data into shared preferences.
   void _saveData() {
-    print("Saving Data into shared preferences now: ${DateTime.now()}");
+//    print("Saving Data into shared preferences now: ${DateTime.now()}");
 
     // obtain shared preferences
-    SharedPreferences.getInstance().then((SharedPreferences prefs) => prefs.setString('data', json.encode(widget._viewModel.model)));
+//    SharedPreferences
+//        .getInstance()
+//        .then((SharedPreferences prefs) => prefs.setString('data', json.encode(widget._viewModel.model)));
   }
 }

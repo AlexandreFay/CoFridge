@@ -62,11 +62,18 @@ class FridgeView extends NavigationIconView {
           horizontal: MyDimens.paddingHorizontal,
           vertical: MyDimens.paddingVertical,
         ),
-        child: new ListView(
-          children: _getChildren(context),
+        child: new StreamBuilder<List<FoodModel>>(
+          stream: _model.food.stream,
+          initialData: _model.food.value,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            return new ListView.builder(
+              itemBuilder: (BuildContext context, int index) => _makeElement(context, snapshot.data, index),
+            );
+          },
         ),
       ),
       floatingActionButton: new FloatingActionButton(
+        heroTag: "Scan",
         backgroundColor: MyColor.primaryColor,
         onPressed: () => _viewModel.scan(context: context),
         child: new Icon(
@@ -77,34 +84,31 @@ class FridgeView extends NavigationIconView {
     );
   }
 
-  List<Widget> _getChildren(BuildContext context) {
-    if (_model.food == null || _model.food.isEmpty) {
-      return <Widget>[
-        new Text(
-          "No Food",
-          textAlign: TextAlign.center,
-        ),
-      ];
+  Widget _makeElement(BuildContext context, List<FoodModel> food, int index) {
+    if (index >= food?.length) {
+      return null;
     }
-
-    List<Widget> foodWidgets = new List<Widget>();
-    foodWidgets.addAll(_model.food.map((FoodModel foodModel) {
-      if (foodModel?.product_name == null || foodModel?.product_name == "") {
-        return new Container();
-      }
-      return new ListTile(
-        leading: (foodModel?.image_url != null)
-            ? new Image.network(
-                foodModel.image_url,
-                width: 24.0,
-                height: 24.0,
-              )
-            : new Icon(Icons.help_outline),
-        title: new Text(foodModel.product_name),
-        trailing: new Text(foodModel.quantity.toString()),
-        onTap: () => _viewModel.onTapFood(context: context, foodModel: foodModel),
-      );
-    }).toList());
-    return foodWidgets;
+    final FoodModel foodModel = food[index];
+    return new ListTile(
+      leading: (foodModel?.image_url != null)
+          ? new Image.network(
+              foodModel.image_url,
+              width: 24.0,
+              height: 24.0,
+            )
+          : new Icon(Icons.help_outline),
+      title: new Text(foodModel.product_name),
+//        trailing: new Text(foodModel.quantity.toString()),
+      trailing: new StreamBuilder<int>(
+        stream: foodModel.myQuantity.stream,
+        initialData: foodModel.myQuantity.value,
+        builder: (context, snapshot) {
+          return new Text(
+            snapshot.data.toString(),
+          );
+        },
+      ),
+      onTap: () => _viewModel.onTapFood(context: context, foodModel: foodModel),
+    );
   }
 }

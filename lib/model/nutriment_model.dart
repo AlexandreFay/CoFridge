@@ -28,15 +28,17 @@ class NutrimentModel extends Object with _$NutrimentModelSerializerMixin {
   String sugars_unit;
   String sugars_value;
 
-  @JsonKey(name: "saturated-fat_value", nullable: true, includeIfNull: false)
+  @JsonKey(name: "saturated-fat_value", fromJson: _toStringConverter)
   String saturatedFatValue;
-  @JsonKey(name: "saturated-fat_unit", nullable: true, includeIfNull: false)
+  @JsonKey(name: "saturated-fat_unit", fromJson: _toStringConverter)
   String saturatedFatUnit;
 
-  @JsonKey(name: "nutrition-score-fr", nullable: true, includeIfNull: false)
+  @JsonKey(name: "nutrition-score-fr", fromJson: _toStringConverter)
   String nutritionScoreFr;
 
   NutrimentModel();
 
   factory NutrimentModel.fromJson(Map<String, dynamic> json) => _$NutrimentModelFromJson(json);
 }
+
+String _toStringConverter(Object value) => value.toString();
