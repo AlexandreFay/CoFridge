@@ -1,4 +1,5 @@
 import 'package:cofridge/model/cofridge_model.dart';
+import 'package:cofridge/value/color.dart';
 import 'package:cofridge/view/navigation_icon_view.dart';
 import 'package:cofridge/viewmodel/article_viewmodel.dart';
 import 'package:flutter/foundation.dart';
@@ -36,7 +37,8 @@ class ArticleView extends NavigationIconView {
               'Article en promotion :',
               textAlign: TextAlign.center,
               style: new TextStyle(
-                fontSize: 16.0,
+                fontSize: 21.0,
+                color: MyColor.primaryColor,
               ),
             ),
           ),
@@ -74,7 +76,8 @@ class ArticleView extends NavigationIconView {
               'Articles intéressants du moment :',
               textAlign: TextAlign.center,
               style: new TextStyle(
-                fontSize: 16.0,
+                fontSize: 21.0,
+                color: MyColor.primaryColor,
               ),
             ),
           ),
