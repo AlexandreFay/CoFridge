@@ -6,13 +6,11 @@ import 'package:cofridge/view/navigation_icon_view.dart';
 import 'package:cofridge/viewmodel/recipe_viewmodel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html_view/flutter_html_view.dart';
 
 @immutable
 class RecipeView extends NavigationIconView {
   final RecipeViewModel _viewModel;
   final CoFridgeModel _model;
-  final RecipeModel _recipeModel;
 
   RecipeView({
     @required final RecipeViewModel viewModel,
@@ -24,10 +22,8 @@ class RecipeView extends NavigationIconView {
         assert(model != null),
         assert(icon != null),
         assert(title?.isNotEmpty),
-        assert(viewModel.recipeModel != null),
         _viewModel = viewModel,
         _model = model,
-        _recipeModel = viewModel.recipeModel,
         super(icon: icon, title: title, vsync: vsync);
 
   @override
@@ -61,33 +57,8 @@ class RecipeView extends NavigationIconView {
           ),
         ],
       ),
-      body: new ListView(
-        children: <Widget>[
-          new Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              (_recipeModel.title == null || _recipeModel.title == "")
-                  ? new Container()
-                  : new HtmlView(data: _recipeModel.title),
-              (_recipeModel.ingredients == null || _recipeModel.ingredients == "")
-                  ? new Container()
-                  : new Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new HtmlView(data: _recipeModel.ingredients),
-                    ),
-              (_recipeModel.steps == null || _recipeModel.steps == "")
-                  ? new Container()
-                  : new Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new HtmlView(data: _recipeModel.steps),
-                    ),
-              new FlatButton(
-                onPressed: () => _viewModel.getRecipes(),
-                child: new Text("Get Recipes"),
-              ),
-            ],
-          ),
-        ],
+      body: new ListView.builder(
+        itemBuilder: (BuildContext context, int index) => _makeElement(context, index),
       ),
       floatingActionButton: new FloatingActionButton(
         backgroundColor: MyColor.primaryColor,
@@ -97,6 +68,17 @@ class RecipeView extends NavigationIconView {
           color: Colors.white,
         ),
       ),
+    );
+  }
+
+  Widget _makeElement(BuildContext context, int index) {
+    if (index >= _model.recipes.length) {
+      return null;
+    }
+    final RecipeModel recipeModel = _model.recipes[index];
+    return new ListTile(
+      title: new Text(recipeModel.title),
+      onTap: () => _viewModel.navToRecipe(context, recipeModel),
     );
   }
 }

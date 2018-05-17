@@ -14,6 +14,7 @@ class SignUpAppState extends State<SignUpApp> {
   @override
   Widget build(BuildContext context) {
     final CoFridgeModel model = new CoFridgeModel();
+    model.loadAsset();
     return MaterialApp(
       title: "CoFridge",
       theme: MyColor.theme(context),
