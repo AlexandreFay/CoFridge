@@ -1,5 +1,6 @@
 import 'package:cofridge/model/food_model.dart';
 import 'package:cofridge/viewmodel/fridge_viewmodel.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class DialogView extends StatelessWidget {

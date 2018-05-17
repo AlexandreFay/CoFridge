@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:cofridge/model/cofridge_model.dart';
 import 'package:cofridge/model/recipe_model.dart';
 import 'package:cofridge/value/state.dart';
+import 'package:cofridge/view/recipedialog_view.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:html/parser.dart' show parse;
 import 'package:http/http.dart' as http;
 
@@ -37,6 +39,15 @@ class RecipeViewModel {
     _recipeModel.steps = getHtml(className: "recipe-preparation__list");
     _recipeModel.ingredients = getHtml(className: "recipe-ingredients__list");
     MyApp.state.setState(() {});
+  }
+
+  void addRecipe({@required final BuildContext context}) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) => new RecipeDialogView(
+        viewModel: this,
+      ),
+    );
   }
 
   RecipeModel get recipeModel => _recipeModel;

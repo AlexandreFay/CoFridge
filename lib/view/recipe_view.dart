@@ -91,7 +91,7 @@ class RecipeView extends NavigationIconView {
       ),
       floatingActionButton: new FloatingActionButton(
         backgroundColor: MyColor.primaryColor,
-        onPressed: () {},
+        onPressed: () => _viewModel.addRecipe(context: context),
         child: new Icon(
           Icons.add,
           color: Colors.white,
