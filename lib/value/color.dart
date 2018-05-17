@@ -10,6 +10,8 @@ class MyColor {
         brightness: Brightness.light,
         accentColor: MyColor.accentColor,
         primaryColor: MyColor.primaryColor,
-        textTheme: Theme.of(context).textTheme.copyWith(subhead: Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 1)),
+        textTheme: Theme.of(context).textTheme.copyWith(
+            subhead:
+                Theme.of(context).textTheme.subhead.apply(fontWeightDelta: 1)),
       );
 }

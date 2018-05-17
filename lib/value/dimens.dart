@@ -18,7 +18,7 @@ class MyDimens {
 
   static final double lineSpace = 8.0;
 
-  static final double logoRatio = 0.24;
+  static final double logoRatio = 0.70;
 
   static final double datePickerHeaderPortraitHeight = 100.0;
   static final double datePickerHeaderLandscapeWidth = 168.0;
@@ -30,11 +30,13 @@ class MyDimens {
   static final int maxDayPickerRowCount = 6;
 
   /// Two extra rows: one for the day-of-week header and one for the month header.
-  static final double maxDayPickerHeight = dayPickerRowHeight * (maxDayPickerRowCount + 2);
+  static final double maxDayPickerHeight =
+      dayPickerRowHeight * (maxDayPickerRowCount + 2);
 
   static final double monthPickerPortraitWidth = 330.0;
   static final double monthPickerLandscapeWidth = 344.0;
 
   static final double dialogActionBarHeight = 52.0;
-  static final double datePickerLandscapeHeight = maxDayPickerHeight + dialogActionBarHeight;
+  static final double datePickerLandscapeHeight =
+      maxDayPickerHeight + dialogActionBarHeight;
 }

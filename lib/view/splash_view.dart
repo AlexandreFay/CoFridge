@@ -1,4 +1,3 @@
-import 'package:cofridge/value/color.dart';
 import 'package:cofridge/value/dimens.dart';
 import 'package:cofridge/view/loading_view.dart';
 import 'package:flutter/foundation.dart';
@@ -20,26 +19,15 @@ class SplashView extends StatelessWidget {
     final ThemeData themeData = Theme.of(context);
     final TextTheme textTheme = themeData.textTheme;
     return new Scaffold(
-      backgroundColor: MyColor.primaryColor,
+      backgroundColor: Colors.white,
       body: new Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           new Image.asset(
-            "asset/img/fridge.png",
+            "asset/img/Cofridge_Logo.png",
             height: MyDimens.screenWidth * MyDimens.logoRatio,
             width: MyDimens.screenWidth * MyDimens.logoRatio,
-          ),
-          new Padding(
-            padding: new EdgeInsets.only(top: MyDimens.dividerTop),
-            child: new Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                new Text("Co ", style: textTheme.display1.apply(color: Colors.white)),
-                new Text("Fridge", style: textTheme.display1.apply(color: MyColor.accentColor)),
-              ],
-            ),
           ),
           new LoadingView(message: _message),
         ],

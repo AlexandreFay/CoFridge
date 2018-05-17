@@ -33,20 +33,9 @@ class SignUpView extends StatelessWidget {
         child: new ListView(
           children: <Widget>[
             new Image.asset(
-              "asset/img/fridge.png",
+              "asset/img/Cofridge_Logo.png",
               height: MyDimens.screenWidth * MyDimens.logoRatio,
               width: MyDimens.screenWidth * MyDimens.logoRatio,
-            ),
-            new Padding(
-              padding: new EdgeInsets.only(top: MyDimens.dividerTop),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  new Text("Co ", style: textTheme.display1.copyWith(color: MyColor.primaryColor)),
-                  new Text("Fridge", style: textTheme.display1.apply(color: MyColor.primaryColor)),
-                ],
-              ),
             ),
             new Padding(
               padding: new EdgeInsets.only(top: MyDimens.dividerTop),

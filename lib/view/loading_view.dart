@@ -30,11 +30,12 @@ class LoadingView extends StatelessWidget {
     if (_message != null) {
       children.add(Padding(
         padding: new EdgeInsets.only(top: 10.00, bottom: 10.00),
-        child: new Text(_message, style: TextStyle(fontSize: 20.00, color: Colors.white)),
+        child: new Text(_message,
+            style: TextStyle(fontSize: 20.00, color: Colors.white)),
       ));
     }
     children.add(CircularProgressIndicator(
-      valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+      valueColor: new AlwaysStoppedAnimation<Color>(Colors.orangeAccent),
     ));
 
     return children;

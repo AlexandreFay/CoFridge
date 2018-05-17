@@ -21,7 +21,9 @@ class FridgeViewModel {
   })  : assert(model != null),
         _model = model;
 
-  Future<Null> onTapFood({@required final BuildContext context, @required final FoodModel foodModel}) async {
+  Future<Null> onTapFood(
+      {@required final BuildContext context,
+      @required final FoodModel foodModel}) async {
     Navigator.push(
       context,
       new MaterialPageRoute(
@@ -52,8 +54,11 @@ class FridgeViewModel {
     return true;
   }
 
-  Future<bool> add({@required final FoodModel model, @required final bool contain}) async {
-    if (model == null || model.product_name == null || model.product_name == "") {
+  Future<bool> add(
+      {@required final FoodModel model, @required final bool contain}) async {
+    if (model == null ||
+        model.product_name == null ||
+        model.product_name == "") {
       return false;
     }
     if (contain) {
@@ -81,14 +86,14 @@ class FridgeViewModel {
 
   Future<Null> scan({@required final BuildContext context}) async {
     try {
-//      final String barcode = await BarcodeScanner.scan();
+      final String barcode = await BarcodeScanner.scan();
 //      print("===> $barcode <===");
 
       /// Beure
 //      final String barcode = "3155250364833";
 
       /// Coca Cola
-      final String barcode = "5449000000996";
+      //    final String barcode = "5449000000996";
       FoodModel foodModel = contain(barcode: barcode);
       if (foodModel != null) {
         showDialog(
@@ -100,7 +105,8 @@ class FridgeViewModel {
         );
         return null;
       }
-      final http.Response response = await http.get("${MyString.foodUrl}$barcode.json");
+      final http.Response response =
+          await http.get("${MyString.foodUrl}$barcode.json");
       if (response.statusCode != 200) {
         return null;
       }
