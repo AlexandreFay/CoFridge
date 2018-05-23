@@ -34,7 +34,7 @@ class ArticleView extends NavigationIconView {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: new Text(
-              'Article en promotion :',
+              'Article in promotion :',
               textAlign: TextAlign.center,
               style: new TextStyle(
                 fontSize: 21.0,
@@ -49,31 +49,31 @@ class ArticleView extends NavigationIconView {
           new ListTile(
             leading: new Image.network(
                 'https://www.saint-vincentbio.com/wp-content/uploads/2014/05/carre-veau-biologique.jpg'),
-            title: const Text('Veau - 500 G - 50% Réduction'),
+            title: const Text('Veal - 500 G - 50% Reduction'),
             subtitle: const Text('Carrefour Rambla'),
           ),
           new ListTile(
             leading: new Image.network(
                 'https://www.passionfroid.fr/images/beurre-micropain-doux-82-mg-10-g-paysan-breton-0019305-0-passionfroid-grossiste-alimentaire-504-110216.jpg'),
-            title: const Text('Beurre - 200 G - 5% Réduction'),
+            title: const Text('Butter - 200 G - 5% Reduction'),
             subtitle: const Text('Carrefour Rambla'),
           ),
           new ListTile(
             leading: new Image.network(
                 'http://www.francine.com/images/content/produits/listes/farine-de-bl-francine_1.jpg'),
-            title: const Text('Farine - 1 KG - 20% Réduction'),
+            title: const Text('Flour - 1 KG - 20% Reduction'),
             subtitle: const Text('Carrefour Rambla'),
           ),
           new ListTile(
             leading: new Image.network(
                 'http://www.saladexpress.ca/images/made/images/generic/carottes_400_265.jpg'),
-            title: const Text('Carrote - 0.15€ / Unité'),
+            title: const Text('Carrot - 0.15€ / Unit'),
             subtitle: const Text('Carrefour Rambla'),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: new Text(
-              'Articles intéressants du moment :',
+              'How to reduction wasted food :',
               textAlign: TextAlign.center,
               style: new TextStyle(
                 fontSize: 21.0,
@@ -88,8 +88,8 @@ class ArticleView extends NavigationIconView {
           new ListTile(
             leading: new Image.network(
                 'https://www.wenow.com/wp-content/uploads/2017/02/le-monde-1.jpg'),
-            title: const Text(
-                '41,2 tonnes de nourriture jetées chaque seconde dans le monde'),
+            title:
+                const Text('41.2 tons of food waste each second in the world'),
             onTap: () {
               _launchURL(
                   "http://www.lemonde.fr/les-decodeurs/article/2017/10/16/gaspillage-41-2-tonnes-de-nourriture-jetees-chaque-seconde-dans-le-monde_5201728_4355770.html");

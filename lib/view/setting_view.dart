@@ -52,7 +52,7 @@ class SettingView extends NavigationIconView {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: new Text(
-              'MARTINS Alexandre',
+              'FATOUNG Thibaut',
               textAlign: TextAlign.center,
               style: new TextStyle(
                 fontSize: 16.0,
@@ -65,17 +65,17 @@ class SettingView extends NavigationIconView {
           ),
           new ListTile(
             leading: const Icon(Icons.phone),
-            title: const Text('Télephone'),
-            subtitle: const Text('0650492615'),
+            title: const Text('Phone number'),
+            subtitle: const Text('+33 650492615'),
           ),
           new ListTile(
             leading: const Icon(Icons.shopping_cart),
-            title: const Text('Magasin'),
+            title: const Text('SuperMarket'),
             subtitle: const Text('Carrefour Glories'),
           ),
           new ListTile(
             leading: const Icon(Icons.credit_card),
-            title: const Text('Nunéro carte de fidélité'),
+            title: const Text('Loyalty cart number'),
             subtitle: const Text('754123545468'),
           ),
           new Divider(
@@ -102,7 +102,7 @@ class SettingView extends NavigationIconView {
             leading: const Icon(Icons.credit_card),
             title: new TextField(
               decoration: new InputDecoration(
-                hintText: "Carte de fidélité",
+                hintText: "Loyalty cart number",
               ),
             ),
           ),
