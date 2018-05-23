@@ -13,7 +13,6 @@ class RecipeModel extends Object with _$RecipeModelSerializerMixin {
   String cooking;
   List<String> steps;
   List<String> ingredients;
-  List<String> utensils;
 
   RecipeModel();
 

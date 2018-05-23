@@ -75,20 +75,85 @@
         "1 l of milk",
         "For the topping:",
         "25 g unsalted butter"
+      ]
+    },
+    {
+      "title": "Filet mignon in crust",
+      "time": "1h",
+      "people": "6",
+      "level": "1/4",
+      "cost": "1/3",
+      "preparation": "15 min",
+      "cooking": "45 min",
+      "steps": [
+        "Step 1",
+        "Peel and slice the onions.",
+        "2nd step",
+        "Sauté in a pan with 20 g of butter for about 3 minutes. Remove from the sauté pan and set aside.",
+        "Step 3",
+        "In the same pan, sauté the tenderloins on each side.",
+        "Step 4",
+        "Cook for 10 minutes over low heat.",
+        "Step 5",
+        "Reincorporate the onions. Continue cooking for 5 minutes. Salt, pepper. Book.",
+        "Step 6",
+        "Unroll the puff pastries.",
+        "Step 7",
+        "Place on each dough two slices of ham and 100 g of Gruyère cheese . Salt and pepper.",
+        "Step 8",
+        "Put a fillet on each dough and top with onion sauce.",
+        "Step 9",
+        "Fold the dough around the meat and solder the edges with the beaten egg yolk and a food brush.",
+        "Step 10",
+        "Bake for 45 minutes at 200 ° C (thermostat 6-7)."
       ],
-      "utensils": [
-        "1 bowl",
-        "1 casserole dish",
-        "1 stove",
-        "1 mixer",
-        "1 knife",
-        "1 saucepan",
-        "1 whip",
-        "1 salad bowl",
-        "1 wooden spoon",
-        "1 oven",
-        "1 grater",
-        "1 lid"
+      "ingredients": [
+        "2 pork tenderloins",
+        "2 puff pastries",
+        "4 slices of white ham",
+        "200 g grated Gruyère cheese",
+        "2 yellow onions",
+        "2 egg yolks"
+      ]
+    },
+    {
+      "title": "Easy veal blanquette",
+      "time": "2h15",
+      "people": "4",
+      "level": "1/4",
+      "cost": "2/3",
+      "preparation": "15 min",
+      "cooking": "2h",
+      "steps": [
+        "Step 1",
+        "Brown the meat in a little butter until the pieces are a little golden.",
+        "2nd step",
+        "Sprinkle with 2 spoons of flour. Stir well.",
+        "Step 3",
+        "Add 2 or 3 glasses of water, the bouillon cubes, the wine and stir. Add water if necessary to cover.",
+        "Step 4",
+        "Cut the carrots into slices and mince the onions, then add them to the meat and the mushrooms.",
+        "Step 5",
+        "Simmer on very low heat about 1:30 to 2:00 stirring.",
+        "Step 6",
+        "If necessary, add water from time to time.",
+        "Step 7",
+        "In a bowl, mix well the cream, the egg yolk and the lemon juice. Add this mixture at the last moment, stir well and serve immediately."
+      ],
+      "ingredients": [
+        "1 kg of veal (for stew)",
+        "1 cube of vegetable broth",
+        "1 chicken broth",
+        "2 carrots",
+        "1 yellow onion",
+        "1 small mushroom box (cut)",
+        "1 small pot of fresh cream",
+        "Lemon",
+        "1 egg yolk",
+        "Flour",
+        "25 cl of white wine",
+        "Salt",
+        "Pepper"
       ]
     }
   ]

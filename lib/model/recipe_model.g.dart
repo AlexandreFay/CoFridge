@@ -17,9 +17,7 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) =>
       ..cooking = json['cooking'] as String
       ..steps = (json['steps'] as List)?.map((e) => e as String)?.toList()
       ..ingredients =
-          (json['ingredients'] as List)?.map((e) => e as String)?.toList()
-      ..utensils =
-          (json['utensils'] as List)?.map((e) => e as String)?.toList();
+          (json['ingredients'] as List)?.map((e) => e as String)?.toList();
 
 abstract class _$RecipeModelSerializerMixin {
   String get title;
@@ -31,7 +29,6 @@ abstract class _$RecipeModelSerializerMixin {
   String get cooking;
   List<String> get steps;
   List<String> get ingredients;
-  List<String> get utensils;
   Map<String, dynamic> toJson() {
     var val = <String, dynamic>{};
 
@@ -50,7 +47,6 @@ abstract class _$RecipeModelSerializerMixin {
     writeNotNull('cooking', cooking);
     writeNotNull('steps', steps);
     writeNotNull('ingredients', ingredients);
-    writeNotNull('utensils', utensils);
     return val;
   }
 }
