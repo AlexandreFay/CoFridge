@@ -10,12 +10,9 @@ FoodModel _$FoodModelFromJson(Map<String, dynamic> json) => new FoodModel()
   ..code = json['code'] as String
   ..product_name = json['product_name'] as String
   ..image_url = json['image_url'] as String
-  ..nutriments = json['nutriments'] == null
-      ? null
-      : new NutrimentModel.fromJson(json['nutriments'] as Map<String, dynamic>)
-  ..myQuantity = json['myQuantity'] == null
-      ? null
-      : _quantityFromJson(json['myQuantity'] as int);
+  ..nutriments =
+      json['nutriments'] == null ? null : new NutrimentModel.fromJson(json['nutriments'] as Map<String, dynamic>)
+  ..myQuantity = json['myQuantity'] == null ? new BehaviorSubject<int>() : _quantityFromJson(json['myQuantity'] as int);
 
 abstract class _$FoodModelSerializerMixin {
   String get code;
@@ -36,8 +33,7 @@ abstract class _$FoodModelSerializerMixin {
     writeNotNull('product_name', product_name);
     writeNotNull('image_url', image_url);
     writeNotNull('nutriments', nutriments);
-    writeNotNull(
-        'myQuantity', myQuantity == null ? null : _quantityToJson(myQuantity));
+    writeNotNull('myQuantity', myQuantity == null ? null : _quantityToJson(myQuantity));
     return val;
   }
 }
