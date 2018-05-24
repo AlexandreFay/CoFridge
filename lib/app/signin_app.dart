@@ -14,6 +14,8 @@ class SignInAppState extends State<SignInApp> {
   Widget build(BuildContext context) => MaterialApp(
         title: "CoFridge",
         theme: MyColor.theme(context),
+        debugShowCheckedModeBanner: false,
+        debugShowMaterialGrid: false,
         home: new SignInView(
           viewModel: new SignInViewModel(),
         ),

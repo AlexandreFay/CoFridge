@@ -18,6 +18,8 @@ class SignUpAppState extends State<SignUpApp> {
     return MaterialApp(
       title: "CoFridge",
       theme: MyColor.theme(context),
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
       home: new SignUpView(
         viewModel: new SignUpViewModel(model: model),
         model: model,

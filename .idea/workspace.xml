@@ -8,22 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33667a3a-02d6-405c-a659-725bb7990cef" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/asset/json/recipes.json" afterPath="$PROJECT_DIR$/asset/json/recipes.json" />
-      <change beforePath="$PROJECT_DIR$/lib/model/cofridge_model.g.dart" afterPath="$PROJECT_DIR$/lib/model/cofridge_model.g.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/model/food_model.g.dart" afterPath="$PROJECT_DIR$/lib/model/food_model.g.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/model/nutriment_model.g.dart" afterPath="$PROJECT_DIR$/lib/model/nutriment_model.g.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/model/recipe_model.dart" afterPath="$PROJECT_DIR$/lib/model/recipe_model.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/model/recipe_model.g.dart" afterPath="$PROJECT_DIR$/lib/model/recipe_model.g.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/model/user_model.g.dart" afterPath="$PROJECT_DIR$/lib/model/user_model.g.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/value/dimens.dart" afterPath="$PROJECT_DIR$/lib/value/dimens.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/view/article_view.dart" afterPath="$PROJECT_DIR$/lib/view/article_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/view/fridge_view.dart" afterPath="$PROJECT_DIR$/lib/view/fridge_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/view/recipe_content_view.dart" afterPath="$PROJECT_DIR$/lib/view/recipe_content_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/view/recipe_view.dart" afterPath="$PROJECT_DIR$/lib/view/recipe_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/view/signin_view.dart" afterPath="$PROJECT_DIR$/lib/view/signin_view.dart" />
-      <change beforePath="$PROJECT_DIR$/lib/viewmodel/recipe_viewmodel.dart" afterPath="$PROJECT_DIR$/lib/viewmodel/recipe_viewmodel.dart" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" afterPath="$PROJECT_DIR$/pubspec.yaml" />
+      <change beforePath="$PROJECT_DIR$/lib/app/cofridge_app.dart" afterPath="$PROJECT_DIR$/lib/app/cofridge_app.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/app/signin_app.dart" afterPath="$PROJECT_DIR$/lib/app/signin_app.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/app/signup_app.dart" afterPath="$PROJECT_DIR$/lib/app/signup_app.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/app/splash_app.dart" afterPath="$PROJECT_DIR$/lib/app/splash_app.dart" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,14 +22,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="recipe_content_view.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recipe_content_view.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/view/recipe_content_view.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="78" column="33" lean-forward="true" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+            <state relative-caret-position="391">
+              <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cofridge_app.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/app/cofridge_app.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="523">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signin_app.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/app/signin_app.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup_app.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/app/signup_app.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="splash_app.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/app/splash_app.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,26 +104,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fridge_view.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/view/fridge_view.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-133">
-              <caret line="40" column="31" lean-forward="false" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="signin_view.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/view/signin_view.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="recipedialog_view.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/view/recipedialog_view.dart">
           <provider selected="true" editor-type-id="text-editor">
@@ -104,16 +112,6 @@
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dimens.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/value/dimens.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -203,8 +201,6 @@
         <option value="$PROJECT_DIR$/lib/viewmodel/signin_viewmodel.dart" />
         <option value="$PROJECT_DIR$/lib/viewmodel/home_viewmodel.dart" />
         <option value="$PROJECT_DIR$/lib/view/navigation_icon_view.dart" />
-        <option value="$PROJECT_DIR$/lib/app/splash_app.dart" />
-        <option value="$PROJECT_DIR$/lib/app/signin_app.dart" />
         <option value="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" />
         <option value="$PROJECT_DIR$/ios/Runner/Info.plist" />
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
@@ -226,13 +222,11 @@
         <option value="$PROJECT_DIR$/lib/model/nutriment_model.dart" />
         <option value="$PROJECT_DIR$/lib/view/fridge_content_view.dart" />
         <option value="$PROJECT_DIR$/lib/model/food_model.dart" />
-        <option value="$PROJECT_DIR$/lib/app/cofridge_app.dart" />
         <option value="$PROJECT_DIR$/lib/view/signup_view.dart" />
         <option value="$PROJECT_DIR$/lib/value/color.dart" />
         <option value="$PROJECT_DIR$/lib/view/splash_view.dart" />
         <option value="$PROJECT_DIR$/lib/view/loading_view.dart" />
         <option value="$PROJECT_DIR$/asset/recipes.json" />
-        <option value="$PROJECT_DIR$/lib/app/signup_app.dart" />
         <option value="$PROJECT_DIR$/lib/model/cofridge_model.dart" />
         <option value="$PROJECT_DIR$/lib/model/food_model.g.dart" />
         <option value="$PROJECT_DIR$/lib/viewmodel/fridge_viewmodel.dart" />
@@ -249,6 +243,10 @@
         <option value="$PROJECT_DIR$/lib/viewmodel/recipe_viewmodel.dart" />
         <option value="$PROJECT_DIR$/asset/json/recipes.json" />
         <option value="$PROJECT_DIR$/lib/view/recipe_content_view.dart" />
+        <option value="$PROJECT_DIR$/lib/app/cofridge_app.dart" />
+        <option value="$PROJECT_DIR$/lib/app/signin_app.dart" />
+        <option value="$PROJECT_DIR$/lib/app/signup_app.dart" />
+        <option value="$PROJECT_DIR$/lib/app/splash_app.dart" />
       </list>
     </option>
   </component>
@@ -327,6 +325,12 @@
               <item name="CoFridge" type="b2602c69:ProjectViewProjectNode" />
               <item name="CoFridge" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CoFridge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CoFridge" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CoFridge" type="b2602c69:ProjectViewProjectNode" />
@@ -649,27 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/app/signin_app.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/app/cofridge_app.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/app/splash_app.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/view/signup_view.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -736,13 +719,6 @@
       </provider>
     </entry>
     <entry file="file://D:/Programs/flutter/packages/flutter/lib/src/services/asset_bundle.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/app/signup_app.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/viewmodel/home_viewmodel.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -974,11 +950,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/view/recipe_content_view.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="78" column="33" lean-forward="true" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+        <state relative-caret-position="391">
+          <caret line="79" column="43" lean-forward="true" selection-start-line="79" selection-start-column="43" selection-end-line="79" selection-end-column="43" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/app/cofridge_app.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/app/signin_app.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/app/signup_app.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/app/splash_app.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

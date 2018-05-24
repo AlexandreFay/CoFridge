@@ -40,6 +40,8 @@ class CoFridgeAppState extends State<CoFridgeApp> {
     return MaterialApp(
       title: "CoFridge",
       theme: MyColor.theme(context),
+      debugShowCheckedModeBanner: false,
+      debugShowMaterialGrid: false,
       home: new HomeView(
         viewModel: widget._viewModel,
       ),
