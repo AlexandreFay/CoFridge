@@ -2,9 +2,10 @@
   "recipes": [
     {
       "title": "Bolognese lasagna",
+      "image": "asset/img/recette_lasagnes-a-la-bolognaise.jpg",
       "time": "2h15",
       "people": "8",
-      "level": "3/4",
+      "level": "Medium",
       "cost": "2/3",
       "preparation": "45 min",
       "cooking": "1h30",
@@ -79,9 +80,10 @@
     },
     {
       "title": "Filet mignon in crust",
+      "image": "asset/img/recette_filet-mignon-en-croute.jpg",
       "time": "1h",
       "people": "6",
-      "level": "1/4",
+      "level": "Very Easy",
       "cost": "1/3",
       "preparation": "15 min",
       "cooking": "45 min",
@@ -118,9 +120,10 @@
     },
     {
       "title": "Easy veal blanquette",
+      "image": "asset/img/recette_blanquette-de-veau-facile.jpg",
       "time": "2h15",
       "people": "4",
-      "level": "1/4",
+      "level": "Very Easy",
       "cost": "2/3",
       "preparation": "15 min",
       "cooking": "2h",

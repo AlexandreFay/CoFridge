@@ -21,10 +21,23 @@ class RecipeContentView extends StatelessWidget {
     final TextTheme textTheme = themeData.textTheme;
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Recipe information"),
+        leading: new IconButton(
+          color: Colors.white,
+          onPressed: () => _viewModel.navBack(context),
+          icon: new Icon(Icons.arrow_back),
+        ),
+        title: new Text(
+          "Recipe information",
+          style: textTheme.headline.apply(color: Colors.white),
+        ),
       ),
       body: new ListView(
         children: <Widget>[
+          new Image.asset(
+            _recipeModel.image,
+            fit: BoxFit.cover,
+            height: 256.0,
+          ),
           new Padding(
             padding: const EdgeInsets.only(
               top: MyDimens.paddingTop,
@@ -36,11 +49,6 @@ class RecipeContentView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                new Text(
-                  "Main Course",
-                  textAlign: TextAlign.center,
-                  style: textTheme.button.apply(color: Colors.orangeAccent),
-                ),
                 new Padding(
                   padding: const EdgeInsets.only(top: MyDimens.paddingTop),
                   child: new Text(
@@ -54,20 +62,50 @@ class RecipeContentView extends StatelessWidget {
                   child: new Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      new Text(_recipeModel.level),
+                      new Column(
+                        children: <Widget>[
+                          new Icon(Icons.timeline),
+                          new Padding(
+                            padding: const EdgeInsets.only(top: MyDimens.paddingTop),
+                            child: new Text(_recipeModel.level),
+                          ),
+                        ],
+                      ),
                       new Container(
                         color: Colors.black,
                         height: 24.0,
                         width: 1.0,
                       ),
-                      new Text(_recipeModel.preparation),
+                      new Column(
+                        children: <Widget>[
+                          new Icon(Icons.av_timer),
+                          new Padding(
+                            padding: const EdgeInsets.only(top: MyDimens.paddingTop),
+                            child: new Text(_recipeModel.preparation),
+                          ),
+                        ],
+                      ),
                       new Container(
                         color: Colors.black,
                         height: 24.0,
                         width: 1.0,
                       ),
-                      new Text(_recipeModel.cooking),
+                      Column(
+                        children: <Widget>[
+                          new Icon(Icons.timer),
+                          new Padding(
+                            padding: const EdgeInsets.only(top: MyDimens.paddingTop),
+                            child: new Text(_recipeModel.cooking),
+                          ),
+                        ],
+                      ),
                     ],
+                  ),
+                ),
+                new Padding(
+                  padding: const EdgeInsets.only(top: MyDimens.paddingTop),
+                  child: new Divider(
+                    color: Colors.black,
                   ),
                 ),
                 new Padding(
@@ -84,6 +122,12 @@ class RecipeContentView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: _makeIngredients(context),
+                  ),
+                ),
+                new Padding(
+                  padding: const EdgeInsets.only(top: MyDimens.paddingTop),
+                  child: new Divider(
+                    color: Colors.black,
                   ),
                 ),
                 new Padding(

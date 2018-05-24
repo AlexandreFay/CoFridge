@@ -6,21 +6,21 @@ part of 'recipe_model.dart';
 // Generator: JsonSerializableGenerator
 // **************************************************************************
 
-RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) =>
-    new RecipeModel()
-      ..title = json['title'] as String
-      ..time = json['time'] as String
-      ..people = json['people'] as String
-      ..level = json['level'] as String
-      ..cost = json['cost'] as String
-      ..preparation = json['preparation'] as String
-      ..cooking = json['cooking'] as String
-      ..steps = (json['steps'] as List)?.map((e) => e as String)?.toList()
-      ..ingredients =
-          (json['ingredients'] as List)?.map((e) => e as String)?.toList();
+RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) => new RecipeModel()
+  ..title = json['title'] as String
+  ..image = json['image'] as String
+  ..time = json['time'] as String
+  ..people = json['people'] as String
+  ..level = json['level'] as String
+  ..cost = json['cost'] as String
+  ..preparation = json['preparation'] as String
+  ..cooking = json['cooking'] as String
+  ..steps = (json['steps'] as List)?.map((e) => e as String)?.toList()
+  ..ingredients = (json['ingredients'] as List)?.map((e) => e as String)?.toList();
 
 abstract class _$RecipeModelSerializerMixin {
   String get title;
+  String get image;
   String get time;
   String get people;
   String get level;
@@ -39,6 +39,7 @@ abstract class _$RecipeModelSerializerMixin {
     }
 
     writeNotNull('title', title);
+    writeNotNull('image', image);
     writeNotNull('time', time);
     writeNotNull('people', people);
     writeNotNull('level', level);

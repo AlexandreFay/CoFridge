@@ -5,6 +5,7 @@ part 'recipe_model.g.dart';
 @JsonSerializable(includeIfNull: false)
 class RecipeModel extends Object with _$RecipeModelSerializerMixin {
   String title;
+  String image;
   String time;
   String people;
   String level;

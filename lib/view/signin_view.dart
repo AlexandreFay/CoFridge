@@ -27,50 +27,56 @@ class SignInView extends StatelessWidget {
         ),
         child: new ListView(
           children: <Widget>[
-            new Image.asset(
-              "asset/img/Cofridge_Logo.png",
-              height: MyDimens.screenWidth * MyDimens.logoRatio,
-              width: MyDimens.screenWidth * MyDimens.logoRatio,
-            ),
-            new Padding(
-              padding: new EdgeInsets.only(top: MyDimens.dividerTop),
-              child: new TextField(
-                decoration: new InputDecoration(
-                  hintText: "Email",
+            new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                new Image.asset(
+                  "asset/img/Cofridge_Logo.png",
+                  height: MyDimens.screenWidth * MyDimens.logoRatio,
+                  width: MyDimens.screenWidth * MyDimens.logoRatio,
                 ),
-              ),
-            ),
-            new Padding(
-              padding: new EdgeInsets.only(top: MyDimens.dividerTop),
-              child: new TextField(
-                decoration: new InputDecoration(
-                  hintText: "Password",
-                ),
-              ),
-            ),
-            new Padding(
-              padding: new EdgeInsets.only(top: MyDimens.dividerTop),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new RaisedButton(
-                    onPressed: () => _viewModel.handleOnNav(context),
-                    color: MyColor.primaryColor,
-                    child: Text(
-                      "Sign Up",
-                      style: textTheme.button.copyWith(color: Colors.white),
+                new Padding(
+                  padding: new EdgeInsets.only(top: MyDimens.dividerTop),
+                  child: new TextField(
+                    decoration: new InputDecoration(
+                      hintText: "Email",
                     ),
                   ),
-                  new RaisedButton(
-                    onPressed: null,
-                    color: MyColor.primaryColor,
-                    child: new Text(
-                      "Sign In",
-                      style: textTheme.button.copyWith(color: Colors.white),
+                ),
+                new Padding(
+                  padding: new EdgeInsets.only(top: MyDimens.dividerTop),
+                  child: new TextField(
+                    decoration: new InputDecoration(
+                      hintText: "Password",
                     ),
                   ),
-                ],
-              ),
+                ),
+                new Padding(
+                  padding: new EdgeInsets.only(top: MyDimens.dividerTop),
+                  child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      new RaisedButton(
+                        onPressed: () => _viewModel.handleOnNav(context),
+                        color: MyColor.primaryColor,
+                        child: Text(
+                          "Sign Up",
+                          style: textTheme.button.copyWith(color: Colors.white),
+                        ),
+                      ),
+                      new RaisedButton(
+                        onPressed: null,
+                        color: MyColor.primaryColor,
+                        child: new Text(
+                          "Sign In",
+                          style: textTheme.button.copyWith(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             )
           ],
         ),

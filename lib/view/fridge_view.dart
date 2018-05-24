@@ -89,26 +89,33 @@ class FridgeView extends NavigationIconView {
       return null;
     }
     final FoodModel foodModel = food[index];
-    return new ListTile(
-      leading: (foodModel?.image_url != null)
-          ? new Image.network(
-              foodModel.image_url,
-              width: 24.0,
-              height: 24.0,
-            )
-          : new Icon(Icons.help_outline),
-      title: new Text(foodModel.product_name),
+    return new Column(
+      children: <Widget>[
+        new ListTile(
+          leading: (foodModel?.image_url != null)
+              ? new Image.network(
+                  foodModel.image_url,
+                  width: 24.0,
+                  height: 24.0,
+                )
+              : new Icon(Icons.help_outline),
+          title: new Text(foodModel.product_name),
 //        trailing: new Text(foodModel.quantity.toString()),
-      trailing: new StreamBuilder<int>(
-        stream: foodModel.myQuantity.stream,
-        initialData: foodModel.myQuantity.value,
-        builder: (context, snapshot) {
-          return new Text(
-            snapshot.data.toString(),
-          );
-        },
-      ),
-      onTap: () => _viewModel.onTapFood(context: context, foodModel: foodModel),
+          trailing: new StreamBuilder<int>(
+            stream: foodModel.myQuantity.stream,
+            initialData: foodModel.myQuantity.value,
+            builder: (context, snapshot) {
+              return new Text(
+                snapshot.data.toString(),
+              );
+            },
+          ),
+          onTap: () => _viewModel.onTapFood(context: context, foodModel: foodModel),
+        ),
+        new Divider(
+          color: Colors.black,
+        ),
+      ],
     );
   }
 }

@@ -26,4 +26,7 @@ flutter:
   uses-material-design: true
   assets:
       - asset/img/Cofridge_Logo.png
+      - asset/img/recette_blanquette-de-veau-facile.jpg
+      - asset/img/recette_filet-mignon-en-croute.jpg
+      - asset/img/recette_lasagnes-a-la-bolognaise.jpg
       - asset/json/recipes.json

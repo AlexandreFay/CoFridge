@@ -18,7 +18,7 @@ class MyDimens {
 
   static const double lineSpace = 8.0;
 
-  static const double logoRatio = 0.70;
+  static const double logoRatio = 0.1;
 
   static const double datePickerHeaderPortraitHeight = 100.0;
   static const double datePickerHeaderLandscapeWidth = 168.0;

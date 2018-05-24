@@ -57,8 +57,16 @@ class RecipeView extends NavigationIconView {
           ),
         ],
       ),
-      body: new ListView.builder(
-        itemBuilder: (BuildContext context, int index) => _makeElement(context, index),
+      body: new Padding(
+        padding: const EdgeInsets.only(
+          top: MyDimens.paddingTop,
+          right: MyDimens.paddingRight,
+          bottom: MyDimens.paddingBottom,
+          left: MyDimens.paddingLeft,
+        ),
+        child: new ListView.builder(
+          itemBuilder: (BuildContext context, int index) => _makeElement(context, index),
+        ),
       ),
       floatingActionButton: new FloatingActionButton(
         backgroundColor: MyColor.primaryColor,
@@ -76,9 +84,21 @@ class RecipeView extends NavigationIconView {
       return null;
     }
     final RecipeModel recipeModel = _model.recipes[index];
-    return new ListTile(
-      title: new Text(recipeModel.title),
-      onTap: () => _viewModel.navToRecipe(context, recipeModel),
+    return new Column(
+      children: <Widget>[
+        new ListTile(
+          leading: Image.asset(
+            recipeModel.image,
+            width: 24.0,
+            height: 24.0,
+          ),
+          title: new Text(recipeModel.title),
+          onTap: () => _viewModel.navToRecipe(context, recipeModel),
+        ),
+        new Divider(
+          color: Colors.black,
+        ),
+      ],
     );
   }
 }

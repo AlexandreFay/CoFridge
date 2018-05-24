@@ -6,33 +6,26 @@ part of 'nutriment_model.dart';
 // Generator: JsonSerializableGenerator
 // **************************************************************************
 
-NutrimentModel _$NutrimentModelFromJson(Map<String, dynamic> json) =>
-    new NutrimentModel()
-      ..energy_value = json['energy_value'] as String
-      ..energy_unit = json['energy_unit'] as String
-      ..fat_value = json['fat_value'] as String
-      ..fat_unit = json['fat_unit'] as String
-      ..carbohydrates_value = json['carbohydrates_value'] as String
-      ..carbohydrates_unit = json['carbohydrates_unit'] as String
-      ..fiber_value = json['fiber_value'] as String
-      ..fiber_unit = json['fiber_unit'] as String
-      ..proteins_value = json['proteins_value'] as String
-      ..proteins_unit = json['proteins_unit'] as String
-      ..salt_value = json['salt_value'] as String
-      ..salt_unit = json['salt_unit'] as String
-      ..sodium_value = json['sodium_value'] as String
-      ..sodium_unit = json['sodium_unit'] as String
-      ..sugars_unit = json['sugars_unit'] as String
-      ..sugars_value = json['sugars_value'] as String
-      ..saturatedFatValue = json['saturated-fat_value'] == null
-          ? null
-          : _toStringConverter(json['saturated-fat_value'])
-      ..saturatedFatUnit = json['saturated-fat_unit'] == null
-          ? null
-          : _toStringConverter(json['saturated-fat_unit'])
-      ..nutritionScoreFr = json['nutrition-score-fr'] == null
-          ? null
-          : _toStringConverter(json['nutrition-score-fr']);
+NutrimentModel _$NutrimentModelFromJson(Map<String, dynamic> json) => new NutrimentModel()
+  ..energy_value = json['energy_value'] as String
+  ..energy_unit = json['energy_unit'] as String
+  ..fat_value = json['fat_value'] as String
+  ..fat_unit = json['fat_unit'] as String
+  ..carbohydrates_value = json['carbohydrates_value'] as String
+  ..carbohydrates_unit = json['carbohydrates_unit'] as String
+  ..fiber_value = json['fiber_value'] as String
+  ..fiber_unit = json['fiber_unit'] as String
+  ..proteins_value = json['proteins_value'] as String
+  ..proteins_unit = json['proteins_unit'] as String
+  ..salt_value = json['salt_value'] as String
+  ..salt_unit = json['salt_unit'] as String
+  ..sodium_value = json['sodium_value'] as String
+  ..sodium_unit = json['sodium_unit'] as String
+  ..sugars_unit = json['sugars_unit'] as String
+  ..sugars_value = json['sugars_value'] as String
+  ..saturatedFatValue = json['saturated-fat_value'] == null ? null : _toStringConverter(json['saturated-fat_value'])
+  ..saturatedFatUnit = json['saturated-fat_unit'] == null ? null : _toStringConverter(json['saturated-fat_unit'])
+  ..nutritionScoreFr = json['nutrition-score-fr'] == null ? null : _toStringConverter(json['nutrition-score-fr']);
 
 abstract class _$NutrimentModelSerializerMixin {
   String get energy_value;

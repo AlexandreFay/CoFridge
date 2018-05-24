@@ -23,6 +23,10 @@ class RecipeViewModel {
     );
   }
 
+  void navBack(BuildContext context) {
+    Navigator.pop(context);
+  }
+
   void navToRecipe(BuildContext context, RecipeModel recipeModel) {
     Navigator.push(
       context,

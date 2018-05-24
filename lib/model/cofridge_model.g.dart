@@ -7,8 +7,7 @@ part of 'cofridge_model.dart';
 // **************************************************************************
 
 CoFridgeModel _$CoFridgeModelFromJson(Map<String, dynamic> json) => new CoFridgeModel()
-  ..food =
-      json['food'] == null ? new BehaviorSubject<List<FoodModel>>() : _foodFromJson(json['food'] as List<FoodModel>)
+  ..food = json['food'] == null ? BehaviorSubject<List<FoodModel>>() : _foodFromJson(json['food'] as List<FoodModel>)
   ..user = json['user'] == null ? null : new UserModel.fromJson(json['user'] as Map<String, dynamic>)
   ..recipes = (json['recipes'] as List)
       ?.map((e) => e == null ? null : new RecipeModel.fromJson(e as Map<String, dynamic>))
